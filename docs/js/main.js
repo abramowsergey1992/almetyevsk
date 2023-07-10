@@ -6,12 +6,36 @@ $(function () {
 			600
 		);
 	});
+	if ($(".front-news__scroll").length) {
+		$(".front-news__right-btn-down").click(function () {
+			$(".front-news__scroll");
+		});
+		$(".front-news__right-btn-down").click(function () {
+			$(".front-news__scroll").animate(
+				{ scrollTop: $(".front-news__scroll").scrollTop() + 200 },
+				600
+			);
+		});
+		$(".front-news__scroll").scroll(function () {
+			console.log($(this).scrollTop());
+			if (
+				$(".front-news__right-grid").outerHeight() - 100 <=
+				$(".front-news__scroll").outerHeight() + $(this).scrollTop()
+			) {
+				$(".front-news__right-btn-down").fadeOut();
+			} else {
+				$(".front-news__right-btn-down").fadeIn();
+			}
+		});
+	}
+
 	if ($(".front-top").length) {
 		let indx = 0;
 		function titleSliderResize() {
 			let w = 0;
 			$(".front-top__subtitle-slider span").each(function () {
-				w = w < $(this).width() ? $(this).width() : "";
+				w = w < $(this).width() ? $(this).width() : w;
+				console.log($(this).width(), w);
 			});
 			$(".front-top__subtitle-slider").css("min-width", w);
 			$(".front-top__title-slider").css(
@@ -86,9 +110,9 @@ $(function () {
 			},
 		});
 	}
-	if ($(".front-about__slider").length) {
-		let progress = $(".front-about__slider-autoplay-circle");
-		const swiper = new Swiper(".front-about__slider", {
+	if ($(".about-grid__slider").length) {
+		let progress = $(".about-grid__slider-autoplay-circle");
+		const swiper = new Swiper(".about-grid__slider", {
 			slidesPerView: 1,
 			loop: true,
 			spaceBetween: 0,
@@ -107,8 +131,8 @@ $(function () {
 			},
 			grabCursor: true,
 			navigation: {
-				nextEl: $(".front-about__slider-next")[0],
-				prevEl: $(".front-about__slider-prev")[0],
+				nextEl: $(".about-grid__slider-next")[0],
+				prevEl: $(".about-grid__slider-prev")[0],
 			},
 			on: {
 				autoplayTimeLeft: function (swiper, timeLeft, percentage) {
@@ -191,6 +215,7 @@ $(function () {
 	}
 });
 
+$(function(){})
 $(function () {
 	AOS.init({
 		duration: 700, // values from 0 to 3000, with step 50ms
@@ -213,7 +238,8 @@ $(function () {
 					let duration = th.data("duration")
 						? th.data("duration")
 						: 2000;
-					th.css("min-width", th.width());
+					th.css("min-width", th.outerWidth());
+					th.css("max-width", th.outerWidth());
 					th.animateNumber(
 						{
 							number: count,
@@ -236,6 +262,7 @@ $(function () {
 	});
 });
 
+$(function(){})
 $(function(){})
 $(function () {
 	$(".video-hover-play").hover(
@@ -285,7 +312,9 @@ function header() {
 	// if (isFront) {
 	// 	prevscroll = window.innerHeight * 2;
 	// }
-
+	$(".header__burger").click(function () {
+		$("body").toggleClass("_open-header-menu");
+	});
 	if (prevscroll > 5) {
 		header.addClass("_bg");
 	} else {
@@ -395,5 +424,3 @@ $(function () {
 		});
 	});
 });
-
-$(function(){})
