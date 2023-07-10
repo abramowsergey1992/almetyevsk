@@ -234,6 +234,7 @@ $(function () {
 				.find("[data-count]")
 				.each(function () {
 					let th = $(this);
+					let divider = th.data("divider");
 					let count = th.data("count");
 					let duration = th.data("duration")
 						? th.data("duration")
@@ -249,7 +250,13 @@ $(function () {
 								if (count == floored_number) {
 									th.removeAttr("style");
 								}
-								target.text(numberWithSpaces(floored_number));
+								if (divider == false) {
+									target.text(floored_number);
+								} else {
+									target.text(
+										numberWithSpaces(floored_number)
+									);
+								}
 							},
 						},
 						{
