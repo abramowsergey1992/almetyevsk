@@ -1,4 +1,111 @@
 $(function () {
+	if ($(".showplaces__grid ").length) {
+		$grid = $(".showplaces__grid ").masonry({
+			itemSelector: ".showplaces__item",
+			columnWidth: ".showplaces__size",
+			percentPosition: true,
+		});
+		$grid.imagesLoaded().progress(function () {
+			$grid.masonry("layout");
+		});
+	}
+});
+
+$(function () {
+	if ($("#afisha-grid").length) {
+		var elements = document.querySelectorAll(".news-mini-block");
+		Stickyfill.add(elements);
+		function renderAfisha() {
+			$("#afisha-grid").html("");
+			// let filterArray = [...array];
+			// let city = $('[name="city"]:checked').val();
+			// if (city != "all" && city) {
+			// 	filterArray = filterArray.filter(function (elem) {
+			// 		return city.toLowerCase() == elem.city.toLowerCase();
+			// 	});
+			// }
+			// if (city != "all" && city) {
+			// 	filterArray = filterArray.filter(function (elem) {
+			// 		return city.toLowerCase() == elem.city.toLowerCase();
+			// 	});
+			// }
+			$.getJSON($("#afisha-grid").data("json"), function (data) {
+				let array = data;
+				$.each(array, function (key, val) {
+					let $template = $("#template .news-preview").clone();
+					$template
+						.find(".news-preview__img picture")
+						.html(`<img src=${val.img} alt=${val.title}/>`);
+					$template.find(".news-preview__tags").text(val.city);
+					$template.find(".news-preview__date").text(val.date);
+					$template.find(".news-preview__time").text(val.time);
+					$template.find(".news-preview__title").text(val.title);
+					$template.find(".news-preview__link").text(val.link);
+					$("#afisha-grid").append($template);
+				});
+				if (filterArray.length == 0) {
+					$("#afisha-grid").html($("#template .news-none ").clone());
+				}
+			});
+		}
+		$(".afisha-main__filters input").change(function () {
+			renderAfisha();
+		});
+	}
+});
+
+$(function(){})
+$(function(){})
+$(function () {
+	if ($("#contact-map").length) {
+		ymaps.ready(function () {
+			let center = $("#contact-map").data("coord").split(",");
+			console.log(center);
+			let myMap = new ymaps.Map(
+				"contact-map",
+				{
+					center: [
+						parseFloat(center[0].trim()),
+						parseFloat(center[1].trim()),
+					],
+					controls: ["zoomControl"],
+					zoom: 16,
+				},
+				{
+					searchControlProvider: "yandex#search",
+				}
+			);
+
+			myMap.behaviors.disable("scrollZoom");
+
+			//на мобильных устройствах... (проверяем по userAgent браузера)
+			if (
+				/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+					navigator.userAgent
+				)
+			) {
+				//... отключаем перетаскивание карты
+				myMap.behaviors.disable("drag");
+			}
+			myPlacemark = new ymaps.Placemark(
+				[parseFloat(center[0].trim()), parseFloat(center[1].trim())],
+				{
+					hintContent: "",
+					balloonContent: "",
+				},
+				{
+					iconLayout: "default#image",
+					iconImageHref: $("#contact-map").data("marker"),
+					iconImageSize: [33, 33],
+					iconImageOffset: [-16, -16],
+				}
+			);
+			myMap.geoObjects.add(myPlacemark);
+		});
+	}
+});
+
+$(function () {
 	$("body").addClass("_load");
 	$(".front-top-down").click(function () {
 		$("html, body").animate(
@@ -64,8 +171,10 @@ $(function () {
 			$(".front-top__title-slider  span").eq(indx).addClass("_active");
 			$(".front-top__subtitle-slider  span").eq(indx).addClass("_active");
 		}, 2000);
-		let progress = $(".front-slider__autoplay-circle");
-		const swiper = new Swiper(".front-slider", {
+	}
+	if ($(".full-slider").length) {
+		let progress = $(".full-slider__autoplay-circle");
+		const swiper = new Swiper(".full-slider", {
 			slidesPerView: 1,
 			loop: true,
 			spaceBetween: 0,
@@ -85,8 +194,8 @@ $(function () {
 				},
 			},
 			navigation: {
-				nextEl: $(".front-slider__next")[0],
-				prevEl: $(".front-slider__prev")[0],
+				nextEl: $(".full-slider__next")[0],
+				prevEl: $(".full-slider__prev")[0],
 			},
 			on: {
 				autoplayTimeLeft: function (swiper, timeLeft, percentage) {
@@ -97,12 +206,12 @@ $(function () {
 				},
 				slideChange: function (swiper) {
 					let indx = swiper.realIndex;
-					// $(".front-slider__title").removeClass("_prev");
-					// $(".front-slider__title._active").addClass("_prev");
-					$(".front-slider__title._word-animate")
+					// $(".full-slider__title").removeClass("_prev");
+					// $(".full-slider__title._active").addClass("_prev");
+					$(".full-slider__title._word-animate")
 						.removeClass("_word-animate")
 						.addClass("_word-hidden");
-					$(".front-slider__title")
+					$(".full-slider__title")
 						.eq(indx)
 						.addClass("_word-animate")
 						.removeClass("_word-hidden");
@@ -145,15 +254,53 @@ $(function () {
 		});
 	}
 
-	if ($(".front-rich__slider ").length) {
-		const swiper = new Swiper(".front-rich__slider", {
+	if ($(".items-slider__slider ").length) {
+		const swiper = new Swiper(".items-slider__slider", {
 			slidesPerView: "auto",
 			spaceBetween: 20,
 			freeMode: true,
+			navigation: {
+				nextEl: $(".items-slider__next")[0],
+				prevEl: $(".items-slider__prev")[0],
+			},
 			mousewheel: {
 				forceToAxis: true,
 				invert: false,
 			},
+		});
+		$(".items-slider__prev-zona").each(function () {
+			let wrapper = $(this);
+
+			let cursor = wrapper.find(".items-slider__prev");
+			wrapper.on("mousemove", function (e) {
+				console.log("move");
+				let position = $(this).offset();
+				let left = e.pageX - position.left - 76 / 2;
+				let top = e.pageY - position.top - 76 / 2;
+
+				gsap.to(cursor, 0.03, {
+					left: left,
+					top: top,
+					ease: Power4.easOut,
+				});
+			});
+		});
+		$(".items-slider__next-zona").each(function () {
+			let wrapper = $(this);
+
+			let cursor = wrapper.find(".items-slider__next");
+			wrapper.on("mousemove", function (e) {
+				console.log("move");
+				let position = $(this).offset();
+				let left = e.pageX - position.left - 76 / 2;
+				let top = e.pageY - position.top - 76 / 2;
+
+				gsap.to(cursor, 0.03, {
+					left: left,
+					top: top,
+					ease: Power4.easOut,
+				});
+			});
 		});
 	}
 	if ($(".front-persons__swiper").length) {
@@ -215,6 +362,9 @@ $(function () {
 	}
 });
 
+$(function(){})
+$(function(){})
+$(function(){})
 $(function(){})
 $(function () {
 	AOS.init({
@@ -420,6 +570,114 @@ $(function () {
 
 $(function(){})
 $(function(){})
+$(function(){})
+$(function () {
+	$(".popup-slider__swiper").each(function () {
+		const swiper = new Swiper(this, {
+			speed: 400,
+			setWrapperSize: true,
+			observeParents: true,
+			observer: true,
+			spaceBetween: 50,
+		});
+	});
+	$(".popup-slider__overlay, .popup-slider__close").click(function () {
+		$(".popup-slider").fadeOut();
+		$("body").removeClass("_no-scoll");
+	});
+	$("[data-popupslider]").click(function () {
+		let id = $(this).data("popupslider").split("|")[0];
+		let slide = $(this).data("popupslider").split("|")[1];
+		if ($(id).length) {
+			$("body").addClass("_no-scoll");
+			$(id).fadeIn();
+
+			$(id).find(".popup-slider__swiper")[0].swiper.slideTo(slide);
+		}
+	});
+	$("[data-popup]").click(function () {
+		let id = $(this).data("popup");
+		if ($(id).length) {
+			$("body").addClass("_no-scoll");
+			$(id).fadeIn();
+		}
+	});
+	$(".popup__overlay, .popup__close").click(function () {
+		$(".popup").fadeOut();
+		$("body").removeClass("_no-scoll");
+	});
+});
+
+$(function () {
+	$(".preloader").addClass("_load");
+	setTimeout(function () {
+		$(".preloader").addClass("_circles-animate");
+		let delay = 0;
+
+		$(".preloader__circle").each(function () {
+			gsap.to(this, {
+				rotation: 0,
+				delay: delay,
+				duration: 10,
+				ease: "elastic",
+			});
+			delay += 0.2;
+		});
+		setTimeout(function () {
+			$(".preloader__circle").css({
+				opacity: 1,
+				animation: "none",
+			});
+			$(document).mousemove(function (event) {
+				let p = 1 / (window.innerWidth / event.pageX) - 0.5;
+				let i = 0;
+
+				$(".preloader__circle").each(function () {
+					gsap.to(this, {
+						rotation: (4 + i) * p,
+						duration: 4,
+						ease: "elastic",
+					});
+					i += 1;
+				});
+			});
+		}, 4000);
+	}, 500);
+});
+
+$(function () {
+	if ($(".one-img-slider ").length) {
+		$(".one-img-slider ").each(function () {
+			let progress = $(this).find(
+				".gallery-block__slider-autoplay-circle"
+			);
+			let th = $(this);
+			const swiper = new Swiper(this, {
+				slidesPerView: 1,
+				loop: true,
+				spaceBetween: 0,
+				speed: 900,
+				autoplay: {
+					delay: 5000,
+				},
+				grabCursor: true,
+				navigation: {
+					nextEl: th.find(".one-img-slider__next")[0],
+					prevEl: th.find(".one-img-slider__prev")[0],
+				},
+				on: {
+					autoplayTimeLeft: function (swiper, timeLeft, percentage) {
+						progress.css(
+							"stroke-dasharray",
+							(1 - percentage) * 70 + "px, 70px"
+						);
+					},
+				},
+			});
+		});
+	}
+});
+
 $(function () {
 	$(".words").each(function () {
 		let th = $(this);
