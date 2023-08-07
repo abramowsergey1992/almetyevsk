@@ -1,16 +1,4 @@
-$(function () {
-	if ($(".showplaces__grid ").length) {
-		$grid = $(".showplaces__grid ").masonry({
-			itemSelector: ".showplaces__item",
-			columnWidth: ".showplaces__size",
-			percentPosition: true,
-		});
-		$grid.imagesLoaded().progress(function () {
-			$grid.masonry("layout");
-		});
-	}
-});
-
+$(function(){})
 $(function () {
 	if ($("#afisha-grid").length) {
 		// var elements = document.querySelectorAll(".news-mini-block");
@@ -196,57 +184,6 @@ $(function () {
 		"checked",
 		true
 	);
-});
-
-$(function(){})
-$(function(){})
-$(function () {
-	if ($("#contact-map").length) {
-		ymaps.ready(function () {
-			let center = $("#contact-map").data("coord").split(",");
-			console.log(center);
-			let myMap = new ymaps.Map(
-				"contact-map",
-				{
-					center: [
-						parseFloat(center[0].trim()),
-						parseFloat(center[1].trim()),
-					],
-					controls: ["zoomControl"],
-					zoom: 16,
-				},
-				{
-					searchControlProvider: "yandex#search",
-				}
-			);
-
-			myMap.behaviors.disable("scrollZoom");
-
-			//на мобильных устройствах... (проверяем по userAgent браузера)
-			if (
-				/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-					navigator.userAgent
-				)
-			) {
-				//... отключаем перетаскивание карты
-				myMap.behaviors.disable("drag");
-			}
-			myPlacemark = new ymaps.Placemark(
-				[parseFloat(center[0].trim()), parseFloat(center[1].trim())],
-				{
-					hintContent: "",
-					balloonContent: "",
-				},
-				{
-					iconLayout: "default#image",
-					iconImageHref: $("#contact-map").data("marker"),
-					iconImageSize: [33, 33],
-					iconImageOffset: [-16, -16],
-				}
-			);
-			myMap.geoObjects.add(myPlacemark);
-		});
-	}
 });
 
 $(function () {
@@ -506,7 +443,69 @@ $(function () {
 	}
 });
 
+$(function () {
+	if ($("#contact-map").length) {
+		ymaps.ready(function () {
+			let center = $("#contact-map").data("coord").split(",");
+			console.log(center);
+			let myMap = new ymaps.Map(
+				"contact-map",
+				{
+					center: [
+						parseFloat(center[0].trim()),
+						parseFloat(center[1].trim()),
+					],
+					controls: ["zoomControl"],
+					zoom: 16,
+				},
+				{
+					searchControlProvider: "yandex#search",
+				}
+			);
+
+			myMap.behaviors.disable("scrollZoom");
+
+			//на мобильных устройствах... (проверяем по userAgent браузера)
+			if (
+				/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+					navigator.userAgent
+				)
+			) {
+				//... отключаем перетаскивание карты
+				myMap.behaviors.disable("drag");
+			}
+			myPlacemark = new ymaps.Placemark(
+				[parseFloat(center[0].trim()), parseFloat(center[1].trim())],
+				{
+					hintContent: "",
+					balloonContent: "",
+				},
+				{
+					iconLayout: "default#image",
+					iconImageHref: $("#contact-map").data("marker"),
+					iconImageSize: [33, 33],
+					iconImageOffset: [-16, -16],
+				}
+			);
+			myMap.geoObjects.add(myPlacemark);
+		});
+	}
+});
+
 $(function(){})
+$(function () {
+	if ($(".showplaces__grid ").length) {
+		$grid = $(".showplaces__grid ").masonry({
+			itemSelector: ".showplaces__item",
+			columnWidth: ".showplaces__size",
+			percentPosition: true,
+		});
+		$grid.imagesLoaded().progress(function () {
+			$grid.masonry("layout");
+		});
+	}
+});
+
 $(function(){})
 $(function () {
 	let delay = 2000;
@@ -549,60 +548,45 @@ $(function(){})
 $(function(){})
 $(function(){})
 $(function(){})
-$(function () {
-	AOS.init({
-		duration: 700, // values from 0 to 3000, with step 50ms
-		easing: "ease", // default easing for AOS animations
-		once: true, // whether animation should happen only once - while scrolling down
+$(function(){})
+function header() {
+	let header = $(".header");
+	header.removeClass("_header-hidden");
+	let prevscroll = $(window).scrollTop();
+	// if (isFront) {
+	// 	prevscroll = window.innerHeight * 2;
+	// }
+	$(".header__burger").click(function () {
+		$("body").toggleClass("_open-header-menu");
 	});
-	function numberWithSpaces(x) {
-		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+	if (prevscroll > 5) {
+		header.addClass("_bg");
+	} else {
+		header.removeClass("_bg");
 	}
-	document.addEventListener("aos:in", ({ detail }) => {
-		console.log($(detail).find(".words"));
-		$(detail).find(".words").addClass("_word-animate");
-		if ($(detail).find("[data-count]").length) {
-			console.log(detail, $(detail).find("[data-count]"));
-			$(detail)
-				.find("[data-count]")
-				.each(function () {
-					let th = $(this);
-					let divider = th.data("divider");
-					let count = th.data("count");
-					let duration = th.data("duration")
-						? th.data("duration")
-						: 2000;
-					th.css("min-width", th.outerWidth());
-					th.css("max-width", th.outerWidth());
-					th.animateNumber(
-						{
-							number: count,
-							numberStep: function (now, tween) {
-								var floored_number = Math.floor(now),
-									target = $(tween.elem);
-								if (count == floored_number) {
-									th.removeAttr("style");
-								}
-								if (divider == false) {
-									target.text(floored_number);
-								} else {
-									target.text(
-										numberWithSpaces(floored_number)
-									);
-								}
-							},
-						},
-						{
-							easing: "swing",
-							duration: duration,
-						}
-					);
-				});
+	$(window).scroll(() => {
+		let currentScroll = $(window).scrollTop();
+
+		if (currentScroll > 5) {
+			header.addClass("_bg");
+		} else {
+			header.removeClass("_bg");
 		}
+		if (currentScroll > prevscroll) {
+			header.addClass("_header-hidden");
+		} else {
+			header.removeClass("_header-hidden");
+		}
+		if (currentScroll <= 10) {
+			header.removeClass("_header-hidden");
+		}
+		prevscroll = currentScroll;
 	});
+}
+$(function () {
+	header();
 });
 
-$(function(){})
 $(function () {
 	$(".video-hover-play").hover(
 		function () {
@@ -644,6 +628,8 @@ $(function () {
 	}
 });
 
+$(function(){})
+$(function(){})
 $(function(){})
 $(function () {
 	$(".popup-slider__swiper").each(function () {
@@ -688,6 +674,18 @@ $(function () {
 });
 
 $(function () {
+	$("body").addClass("_preloader-open");
+	function preloaderOut() {
+		$(".preloader").addClass("_fadeup");
+		setTimeout(function () {
+			$(".preloader").fadeOut();
+			setCookie("load", true);
+			setTimeout(function () {
+				$("body").removeClass("_preloader-open");
+			}, 500);
+		}, 1500);
+	}
+
 	$(".preloader").addClass("_load");
 	setTimeout(function () {
 		$(".preloader").addClass("_circles-animate");
@@ -702,6 +700,53 @@ $(function () {
 			});
 			delay += 0.2;
 		});
+		if (isCityChange) {
+			setTimeout(function () {
+				$(".header").addClass("_opacity");
+				$(".preloader").addClass("_content");
+			}, 1500);
+
+			setTimeout(function () {
+				$(".preloader").addClass("_city");
+			}, 3000);
+			$(".preloader").on("mousewheel", function (e) {
+				if (e.originalEvent.wheelDelta / 120 > 0) {
+					console.log("up");
+				} else {
+					preloaderOut();
+				}
+			});
+			$(".preloader").on("DOMMouseScroll", function (e) {
+				if (e.originalEvent.wheelDelta / 120 > 0) {
+					console.log("up");
+				} else {
+					preloaderOut();
+				}
+			});
+
+			$(".preloader").swipe({
+				preventDefaultEvents: false,
+				//Generic swipe handler for all directions
+				swipe: function (
+					event,
+					direction,
+					distance,
+					duration,
+					fingerCount,
+					fingerData
+				) {
+					if (distance >= 50) {
+						if (direction == "up") {
+							preloaderOut();
+						}
+					}
+				},
+			});
+		} else {
+			setTimeout(function () {
+				preloaderOut();
+			}, 1000);
+		}
 		setTimeout(function () {
 			$(".preloader__circle").css({
 				opacity: 1,
@@ -805,43 +850,16 @@ $(function () {
 	}
 });
 
-$(function(){})
-function header() {
-	let header = $(".header");
-	header.removeClass("_header-hidden");
-	let prevscroll = $(window).scrollTop();
-	// if (isFront) {
-	// 	prevscroll = window.innerHeight * 2;
-	// }
-	$(".header__burger").click(function () {
-		$("body").toggleClass("_open-header-menu");
-	});
-	if (prevscroll > 5) {
-		header.addClass("_bg");
-	} else {
-		header.removeClass("_bg");
-	}
-	$(window).scroll(() => {
-		let currentScroll = $(window).scrollTop();
-
-		if (currentScroll > 5) {
-			header.addClass("_bg");
-		} else {
-			header.removeClass("_bg");
-		}
-		if (currentScroll > prevscroll) {
-			header.addClass("_header-hidden");
-		} else {
-			header.removeClass("_header-hidden");
-		}
-		if (currentScroll <= 10) {
-			header.removeClass("_header-hidden");
-		}
-		prevscroll = currentScroll;
-	});
-}
 $(function () {
-	header();
+	$(".words").each(function () {
+		let th = $(this);
+		var words = th.text().split(" ");
+		th.empty();
+		$.each(words, function (i, v) {
+			th.append($("<span>").text(v));
+			th.append(" ");
+		});
+	});
 });
 
 // $(function () {
@@ -913,13 +931,54 @@ $(function () {
 // });
 
 $(function () {
-	$(".words").each(function () {
-		let th = $(this);
-		var words = th.text().split(" ");
-		th.empty();
-		$.each(words, function (i, v) {
-			th.append($("<span>").text(v));
-			th.append(" ");
-		});
+	AOS.init({
+		duration: 700, // values from 0 to 3000, with step 50ms
+		easing: "ease", // default easing for AOS animations
+		once: true, // whether animation should happen only once - while scrolling down
+	});
+	function numberWithSpaces(x) {
+		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+	}
+	document.addEventListener("aos:in", ({ detail }) => {
+		console.log($(detail).find(".words"));
+		$(detail).find(".words").addClass("_word-animate");
+		if ($(detail).find("[data-count]").length) {
+			console.log(detail, $(detail).find("[data-count]"));
+			$(detail)
+				.find("[data-count]")
+				.each(function () {
+					let th = $(this);
+					let divider = th.data("divider");
+					let count = th.data("count");
+					let duration = th.data("duration")
+						? th.data("duration")
+						: 2000;
+					th.css("min-width", th.outerWidth());
+					th.css("max-width", th.outerWidth());
+					th.animateNumber(
+						{
+							number: count,
+							numberStep: function (now, tween) {
+								var floored_number = Math.floor(now),
+									target = $(tween.elem);
+								if (count == floored_number) {
+									th.removeAttr("style");
+								}
+								if (divider == false) {
+									target.text(floored_number);
+								} else {
+									target.text(
+										numberWithSpaces(floored_number)
+									);
+								}
+							},
+						},
+						{
+							easing: "swing",
+							duration: duration,
+						}
+					);
+				});
+		}
 	});
 });
