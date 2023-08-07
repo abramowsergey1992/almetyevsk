@@ -17,8 +17,46 @@
 <meta name="msapplication-TileColor" content="#2b5797">
 <meta name="theme-color" content="#ffffff">
   </head>
-  <body> 
+  <body>
+    <script>let isCityChange = false </script>
     <div class="preloader">
+      <script>
+        function getCookie(e, t = !1) {
+        	if (!e) return;
+        	let n = document.cookie.match(
+        		new RegExp(
+        			"(?:^|; )" +
+        			e.replace(/([.$?*|{}()\[\]\\\/+^])/g, "\\$1") +
+        			"=([^;]*)"
+        		)
+        	);
+        	if (n) {
+        		let e = decodeURIComponent(n[1]);
+        		if (t)
+        			try {
+        				return JSON.parse(e);
+        			} catch (e) {}
+        		return e;
+        	}
+        }
+        function setCookie(e, t, n = { path: "/" }) {
+        	if (!e) return;
+        	(n = n || {}).expires instanceof Date &&
+        	(n.expires = n.expires.toUTCString()),
+        	t instanceof Object && (t = JSON.stringify(t));
+        	let o = encodeURIComponent(e) + "=" + encodeURIComponent(t);
+        	for (let e in n) {
+        		o += "; " + e;
+        		let t = n[e];
+        		!0 !== t && (o += "=" + t);
+        	}
+        	document.cookie = o;
+        }
+        function deleteCookie(e) {
+        	setCookie(e, null, { expires: new Date(), path: "/" });
+        }
+        
+      </script>
       <div class="preloader__flex"> </div>
       <div class="preloader__circles"><svg  class="preloader__circle _it-1" width="262" height="261" viewBox="0 0 262 261" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M235.549 206.188C237.586 206.188 239.237 204.537 239.237 202.5C239.237 200.463 237.586 198.812 235.549 198.812C233.513 198.812 231.862 200.463 231.862 202.5C231.862 204.537 233.513 206.188 235.549 206.188Z" fill="#212121"/>
@@ -1555,95 +1593,94 @@
       <div id="pagescroll">
         <div class="container">
           <div class="inner">
-            <div class="breadcrumb">
-              <ul class="breadcrumb__list">
-                <li class="breadcrumb__item"><a class="breadcrumb__link" href="#" title="Главная">Главная</a></li>
-                <li class="breadcrumb__item"><span class="breadcrumb__link-current">Афииша</span></li>
-              </ul>
-            </div>
-            <div class="afisha-head" data-aos="fade">
-              <h1 class="h2">Прошедшие мероприятия</h1>
-              <div class="afisha-head__right"> <a class="afisha-head__past btn-border" href="past.html">Прошедшие мероприятия</a></div>
+            <div data-aos="fade">
+              <div class="breadcrumb overfolow-x">
+                <ul class="breadcrumb__list">
+                  <li class="breadcrumb__item"><a class="breadcrumb__link" href="#" title="Главная">Главная</a></li>
+                  <li class="breadcrumb__item"><span class="breadcrumb__link-current">Афииша</span></li>
+                </ul>
+              </div>
+              <div class="afisha-head">
+                <h1 class="h2">Прошедшие мероприятия</h1>
+                <div class="afisha-head__right"> 
+                  <button class="afisha-head__filter btn-border _black" data-popup="#afisha-filter-popup">Фильтр</button><a class="btn-border" href="past.html">Ближайшие мероприятия</a>
+                </div>
+              </div>
             </div>
             <div class="afisha-main block _past">
-              <div class="afisha-main__filters">
-                <div class="afisha-main__filter-city">
-                  <label>Все города
-                    <input type="radio" name="city" value="all" checked>
-                  </label>
-                  <label> АзнакАЕво
-                    <input type="radio" name="city" value="АзнакАЕво">
-                  </label>
-                  <label> Актюба
-                    <input type="radio" name="city" value="Актюба">
-                  </label>
-                  <label>Альметьевск
-                    <input type="radio" name="city" value="Альметьевск">
-                  </label>
-                  <label>Бавлы
-                    <input type="radio" name="city" value="Бавлы">
-                  </label>
-                  <label>Бугульма
-                    <input type="radio" name="city" value="Бугульма">
-                  </label>
-                  <label>Джалиль
-                    <input type="radio" name="city" value="Джалиль">
-                  </label>
-                  <label>Елабуга
-                    <input type="radio" name="city" value="Елабуга">
-                  </label>
-                  <label>Лениногорск
-                    <input type="radio" name="city" value="Лениногорск">
-                  </label>
-                  <label>Нижнекамск
-                    <input type="radio" name="city" value="Нижнекамск">
-                  </label>
-                  <label>Нурлат
-                    <input type="radio" name="city" value="Нурлат">
-                  </label>
-                </div>
-                <div class="afisha-main__filter">
-                  <div class="afisha-main__filter-head">По категории</div>
-                  <div class="afisha-main__filter-body">
-                    <div class="afisha-main__filter-item">
-                      <input type="radio" name="category" value="all">
-                      <div class="afisha-main__filter-item-indicator"></div>
-                      <div class="afisha-main__filter-item-title">Все</div>
-                    </div>
-                    <div class="afisha-main__filter-item">
-                      <input type="radio" name="category" value="category-1">
-                      <div class="afisha-main__filter-item-indicator"></div>
-                      <div class="afisha-main__filter-item-title">Категория 1</div>
-                    </div>
-                    <div class="afisha-main__filter-item">
-                      <input type="radio" name="category" value="category-2">
-                      <div class="afisha-main__filter-item-indicator"></div>
-                      <div class="afisha-main__filter-item-title">Категория 2</div>
-                    </div>
-                    <div class="afisha-main__filter-item">
-                      <input type="radio" name="category" value="category-3">
-                      <div class="afisha-main__filter-item-indicator"></div>
-                      <div class="afisha-main__filter-item-title">Категория 3</div>
+              <script>let state =  {"city":"АзнакАЕво","page":2,"pages":6,"category":"category-3","date":["19.08.2023","22.08.2023"]}</script>
+              <div class="afisha-main__filters" id="afisha-main__filters-wrap">
+                <div id="afisha-main__filters">
+                  <div class="afisha-main__filter-city">
+                    <label>Все города
+                      <input type="radio" name="city" value="all" checked>
+                    </label>
+                    <label> АзнакАЕво
+                      <input type="radio" name="city" value="АзнакАЕво">
+                    </label>
+                    <label> Актюба
+                      <input type="radio" name="city" value="Актюба">
+                    </label>
+                    <label>Альметьевск
+                      <input type="radio" name="city" value="Альметьевск">
+                    </label>
+                    <label>Бавлы
+                      <input type="radio" name="city" value="Бавлы">
+                    </label>
+                    <label>Бугульма
+                      <input type="radio" name="city" value="Бугульма">
+                    </label>
+                    <label>Джалиль
+                      <input type="radio" name="city" value="Джалиль">
+                    </label>
+                    <label>Елабуга
+                      <input type="radio" name="city" value="Елабуга">
+                    </label>
+                    <label>Лениногорск
+                      <input type="radio" name="city" value="Лениногорск">
+                    </label>
+                    <label>Нижнекамск
+                      <input type="radio" name="city" value="Нижнекамск">
+                    </label>
+                    <label>Нурлат
+                      <input type="radio" name="city" value="Нурлат">
+                    </label>
+                  </div>
+                  <div class="afisha-main__filter _open">
+                    <div class="afisha-main__filter-head">По категории</div>
+                    <div class="afisha-main__filter-body">
+                      <div class="afisha-main__filter-item">
+                        <input type="radio" name="category" value="all">
+                        <div class="afisha-main__filter-item-indicator"></div>
+                        <div class="afisha-main__filter-item-title">Все</div>
+                      </div>
+                      <div class="afisha-main__filter-item">
+                        <input type="radio" name="category" value="category-1">
+                        <div class="afisha-main__filter-item-indicator"></div>
+                        <div class="afisha-main__filter-item-title">Категория 1</div>
+                      </div>
+                      <div class="afisha-main__filter-item">
+                        <input type="radio" name="category" value="category-2">
+                        <div class="afisha-main__filter-item-indicator"></div>
+                        <div class="afisha-main__filter-item-title">Категория 2</div>
+                      </div>
+                      <div class="afisha-main__filter-item">
+                        <input type="radio" name="category" value="category-3">
+                        <div class="afisha-main__filter-item-indicator"></div>
+                        <div class="afisha-main__filter-item-title">Категория 3</div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="afisha-main__filter">
-                  <div class="afisha-main__filter-head">по дате проведения</div>
-                  <div class="afisha-main__filter-body">
-                    <div class="afisha-main__filter-item">
-                      <input type="radio" name="date" value="week">
-                      <div class="afisha-main__filter-item-indicator"></div>
-                      <div class="afisha-main__filter-item-title">на этой неделе</div>
-                    </div>
-                    <div class="afisha-main__filter-item">
-                      <input type="radio" name="date" value="week">
-                      <div class="afisha-main__filter-item-indicator"></div>
-                      <div class="afisha-main__filter-item-title">В этом месяце</div>
-                    </div>
-                    <div class="afisha-main__filter-item">
-                      <input type="radio" name="date" value="near">
-                      <div class="afisha-main__filter-item-indicator"></div>
-                      <div class="afisha-main__filter-item-title">Ближайшие</div>
+                  <div class="afisha-main__filter _open">
+                    <div class="afisha-main__filter-head">по дате проведения</div>
+                    <div class="afisha-main__filter-body">
+                      <div class="calendar">
+                        <div class="calendar__head"> 
+                          <div class="calendar__from"></div><span></span>
+                          <div class="calendar__to"></div>
+                        </div>
+                        <input class="calendar__calendar" id="date-calendar">
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -1667,7 +1704,7 @@
                   </div>
                 </div>
                 <div class="afisha-main__grid-past" id="afisha-grid" data-json="json/afisha.json">
-                  <div class="news-preview">
+                  <div class="news-preview _opacity">
                     <div class="news-preview__img _br"> 
                       <picture>
                         <source type="image/webp" srcset="img/a-1.webp"/><img alt="" src="img/a-1.jpg"/>
@@ -1679,7 +1716,7 @@
                       </div><a class="news-preview__title h3" htef="#">Казанский «Ак Барс» сегодня играет нефтяной матч с омским «Авангардом»</a>
                     </div>
                   </div>
-                  <div class="news-preview">
+                  <div class="news-preview _opacity">
                     <div class="news-preview__img _br"> 
                       <picture>
                         <source type="image/webp" srcset="img/a-2.webp"/><img alt="" src="img/a-2.jpg"/>
@@ -1691,7 +1728,7 @@
                       </div><a class="news-preview__title h3" htef="#">Стартует новая заявочная кампания конкурса молодежных инициативных проектов «Татнефть – платформа твоих возможностей»!</a>
                     </div>
                   </div>
-                  <div class="news-preview">
+                  <div class="news-preview _opacity">
                     <div class="news-preview__img _br"> 
                       <picture>
                         <source type="image/webp" srcset="img/a-3.webp"/><img alt="" src="img/a-3.jpg"/>
@@ -1703,7 +1740,7 @@
                       </div><a class="news-preview__title h3" htef="#">Продолжаются активные выходные — а это значит,  что сегодня вновь Спартакиада «Татнефти», в рамках которой прошла битва лучших ракеток </a>
                     </div>
                   </div>
-                  <div class="news-preview">
+                  <div class="news-preview _opacity">
                     <div class="news-preview__img _br"> 
                       <picture>
                         <source type="image/webp" srcset="img/a-4.webp"/><img alt="" src="img/a-4.jpg"/>
@@ -1715,7 +1752,7 @@
                       </div><a class="news-preview__title h3" htef="#">Самые быстрые в &quot;Татнефти&quot;</a>
                     </div>
                   </div>
-                  <div class="news-preview">
+                  <div class="news-preview _opacity">
                     <div class="news-preview__img _br"> 
                       <picture>
                         <source type="image/webp" srcset="img/a-5.webp"/><img alt="" src="img/a-5.jpg"/>
@@ -1727,7 +1764,7 @@
                       </div><a class="news-preview__title h3" htef="#">Выставка тюркских музыкальных инструментов</a>
                     </div>
                   </div>
-                  <div class="news-preview">
+                  <div class="news-preview _opacity">
                     <div class="news-preview__img _br"> 
                       <picture>
                         <source type="image/webp" srcset="img/n-2.webp"/><img alt="" src="img/n-2.jpg"/>
@@ -1739,7 +1776,7 @@
                       </div><a class="news-preview__title h3" htef="#">«Татнефть» — лучшая по работе со студентами</a>
                     </div>
                   </div>
-                  <div class="news-preview">
+                  <div class="news-preview _opacity">
                     <div class="news-preview__img _br"> 
                       <picture>
                         <source type="image/webp" srcset="img/n-3.webp"/><img alt="" src="img/n-3.jpg"/>
@@ -1867,6 +1904,20 @@
               </div>
             </div>
           </footer>
+        </div>
+      </div>
+    </div>
+    <div class="filters-popup" id="afisha-filter-popup">
+      <div class="filters-popup__overlay"></div>
+      <div class="filters-popup__content"> 
+        <button class="filters-popup__close"><svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21.8241 0.610754L0.61093 21.824M0.606777 0.606601L21.8283 21.8281" stroke="white" stroke-width="1.4"/>
+</svg>
+        </button>
+        <div class="filters-popup__scroll">
+          <div class="filters-popup__head">ФИЛЬТР</div>
+          <div id="afisha-filter-popup-wrap"></div>
+          <button class="link-arrow _gold" id="afisha-filter-submit" type="button">Примеить</button>
         </div>
       </div>
     </div><script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>

@@ -17,8 +17,46 @@
 <meta name="msapplication-TileColor" content="#2b5797">
 <meta name="theme-color" content="#ffffff">
   </head>
-  <body> 
+  <body>
+    <script>let isCityChange = false </script>
     <div class="preloader">
+      <script>
+        function getCookie(e, t = !1) {
+        	if (!e) return;
+        	let n = document.cookie.match(
+        		new RegExp(
+        			"(?:^|; )" +
+        			e.replace(/([.$?*|{}()\[\]\\\/+^])/g, "\\$1") +
+        			"=([^;]*)"
+        		)
+        	);
+        	if (n) {
+        		let e = decodeURIComponent(n[1]);
+        		if (t)
+        			try {
+        				return JSON.parse(e);
+        			} catch (e) {}
+        		return e;
+        	}
+        }
+        function setCookie(e, t, n = { path: "/" }) {
+        	if (!e) return;
+        	(n = n || {}).expires instanceof Date &&
+        	(n.expires = n.expires.toUTCString()),
+        	t instanceof Object && (t = JSON.stringify(t));
+        	let o = encodeURIComponent(e) + "=" + encodeURIComponent(t);
+        	for (let e in n) {
+        		o += "; " + e;
+        		let t = n[e];
+        		!0 !== t && (o += "=" + t);
+        	}
+        	document.cookie = o;
+        }
+        function deleteCookie(e) {
+        	setCookie(e, null, { expires: new Date(), path: "/" });
+        }
+        
+      </script>
       <div class="preloader__flex"> </div>
       <div class="preloader__circles"><svg  class="preloader__circle _it-1" width="262" height="261" viewBox="0 0 262 261" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M235.549 206.188C237.586 206.188 239.237 204.537 239.237 202.5C239.237 200.463 237.586 198.812 235.549 198.812C233.513 198.812 231.862 200.463 231.862 202.5C231.862 204.537 233.513 206.188 235.549 206.188Z" fill="#212121"/>
@@ -1555,7 +1593,7 @@
       <div id="pagescroll">
         <div class="container">
           <div class="inner">
-            <div class="breadcrumb">
+            <div class="breadcrumb overfolow-x">
               <ul class="breadcrumb__list">
                 <li class="breadcrumb__item"><a class="breadcrumb__link" href="#" title="Главная">Главная</a></li>
                 <li class="breadcrumb__item"><span class="breadcrumb__link-current">Будущее Альметьевска</span></li>
