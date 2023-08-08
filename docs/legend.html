@@ -1664,241 +1664,201 @@
       </header>
       <div id="pagescroll">
         <div class="container">
-          <div class="inner">
-            <div class="breadcrumb overfolow-x">
-              <ul class="breadcrumb__list">
-                <li class="breadcrumb__item"><a class="breadcrumb__link" href="#" title="Главная">Главная</a></li>
-                <li class="breadcrumb__item"><span class="breadcrumb__link-current">Новости</span></li>
-              </ul>
+          <div class="inner" id="dark-page">
+            <div data-aos="fade">
+              <div class="breadcrumb overfolow-x">
+                <ul class="breadcrumb__list">
+                  <li class="breadcrumb__item"><a class="breadcrumb__link" href="#" title="Главная">Главная</a></li>
+                  <li class="breadcrumb__item"><span class="breadcrumb__link-current">Легенды города</span></li>
+                </ul>
+              </div>
             </div>
-            <div class="news-head" data-aos="fade">
-              <h1 class="h2">Новости</h1>
-              <ul class="news-head__sort-wrap">
-                <li> 
-                  <button class="news-head__sort" type="button" data-sort="date">По дате добавления</button>
-                </li>
-                <li> 
-                  <button class="news-head__sort" type="button" data-sort="alf">По алфавиту</button>
-                </li>
-                <li> 
-                  <button class="news-head__sort" type="button" data-sort="time">По времени</button>
-                </li>
-              </ul>
-            </div>
-            <div class="news-city-filter overfolow-x">
-              <label>Все города
-                <input class="news-city-filter__city" type="radio" name="city" value="all" checked>
-              </label>
-              <label> АзнакАЕво
-                <input class="news-city-filter__city" type="radio" name="city" value="АзнакАЕво">
-              </label>
-              <label> Актюба
-                <input class="news-city-filter__city" type="radio" name="city" value="Актюба">
-              </label>
-              <label>Альметьевск
-                <input class="news-city-filter__city" type="radio" name="city" value="Альметьевск">
-              </label>
-              <label>Бавлы
-                <input class="news-city-filter__city" type="radio" name="city" value="Бавлы">
-              </label>
-              <label>Бугульма
-                <input class="news-city-filter__city" type="radio" name="city" value="Бугульма">
-              </label>
-              <label>Джалиль
-                <input class="news-city-filter__city" type="radio" name="city" value="Джалиль">
-              </label>
-              <label>Елабуга
-                <input class="news-city-filter__city" type="radio" name="city" value="Елабуга">
-              </label>
-              <label>Лениногорск
-                <input class="news-city-filter__city" type="radio" name="city" value="Лениногорск">
-              </label>
-              <label>Нижнекамск
-                <input class="news-city-filter__city" type="radio" name="city" value="Нижнекамск">
-              </label>
-              <label>Нурлат
-                <input class="news-city-filter__city" type="radio" name="city" value="Нурлат">
-              </label>
-            </div>
-            <div class="news-main block">
-              <div class="news-main__page">
-                <div id="template" style="display:none">
-                  <div class="news-preview">
-                    <div class="news-preview__img _br"> 
-                      <picture>
-                        <source type="image/webp" srcset="img/*.webp"/><img alt="" src="img/*.jpg"/>
-                      </picture>
-                    </div>
-                    <div class="news-preview__content">
-                      <div class="news-preview__head-row"> 
-                        <div class="news-preview__tags"></div><span class="news-preview__date"></span><span class="_divider"></span><span class="news-preview__time"></span>
-                      </div><a class="news-preview__title h3" htef="#"></a>
-                    </div>
-                  </div>
-                  <div class="news-none"> 
-                    <h3>Ничего не найденно</h3>
-                  </div>
-                </div>
-                <div class="news-main__grid" id="news-grid" data-json="json/news.json">
-                  <div class="news-preview _col-span-3">
-                    <div class="news-preview__img _br"> 
-                      <picture>
-                        <source type="image/webp" srcset="img/news-z.webp"/><img alt="" src="img/news-z.jpg"/>
-                      </picture>
-                    </div>
-                    <div class="news-preview__content">
-                      <div class="news-preview__head-row"> 
-                        <div class="news-preview__tags">Нижнекамск</div><span class="news-preview__date">9 марта 2023</span><span class="_divider"></span><span class="news-preview__time">10:45</span>
-                      </div><a class="news-preview__title h3" htef="#">В Нижнекамске открылись «Татнефть-классы»</a>
-                      <div class="news-preview__desc"> 
-                        <p>В Актюбе состоялся розыгрыш Кубка «Татнефти» по конкуру, который стал отборочным этапом всероссийского турнира «Кубок Победы». Соревнования были посвящены памяти уроженки Азнакаевского района Гайши Ахметовой.</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="news-preview">
-                    <div class="news-preview__img _br"> 
-                      <picture>
-                        <source type="image/webp" srcset="img/a-1.webp"/><img alt="" src="img/a-1.jpg"/>
-                      </picture>
-                    </div>
-                    <div class="news-preview__content">
-                      <div class="news-preview__head-row"> 
-                        <div class="news-preview__tags">альметьевск</div><span class="news-preview__date">9 марта 2023</span><span class="_divider"></span><span class="news-preview__time">10:45</span>
-                      </div><a class="news-preview__title h3" htef="#">Казанский «Ак Барс» сегодня играет нефтяной матч с омским «Авангардом»</a>
-                    </div>
-                  </div>
-                  <div class="news-preview">
-                    <div class="news-preview__img _br"> 
-                      <picture>
-                        <source type="image/webp" srcset="img/a-2.webp"/><img alt="" src="img/a-2.jpg"/>
-                      </picture>
-                    </div>
-                    <div class="news-preview__content">
-                      <div class="news-preview__head-row"> 
-                        <div class="news-preview__tags">альметьевск</div><span class="news-preview__date">3 марта 2023</span><span class="_divider"></span><span class="news-preview__time">10:45</span>
-                      </div><a class="news-preview__title h3" htef="#">Стартует новая заявочная кампания конкурса молодежных инициативных проектов «Татнефть – платформа твоих возможностей»!</a>
-                    </div>
-                  </div>
-                  <div class="news-preview">
-                    <div class="news-preview__img _br"> 
-                      <picture>
-                        <source type="image/webp" srcset="img/a-3.webp"/><img alt="" src="img/a-3.jpg"/>
-                      </picture>
-                    </div>
-                    <div class="news-preview__content">
-                      <div class="news-preview__head-row"> 
-                        <div class="news-preview__tags">нурлат</div><span class="news-preview__date">6 марта 2023</span><span class="_divider"></span><span class="news-preview__time">10:45</span>
-                      </div><a class="news-preview__title h3" htef="#">Продолжаются активные выходные — а это значит,  что сегодня вновь Спартакиада «Татнефти», в рамках которой прошла битва лучших ракеток </a>
-                    </div>
-                  </div>
-                  <div class="news-events _br _col-span-2">
-                    <div class="news-events__img"> 
-                      <picture>
-                        <source type="image/webp" srcset="img/n-4.webp"/><img alt="" src="img/n-4.jpg"/>
-                      </picture>
-                    </div>
-                    <div class="news-events__content">
-                      <div class="news-events__title h3">НЕФТЯННИК — АК БАРС</div>
-                      <div class="news-events__time">15 февраля, 19:00</div><a class="news-events__link" href="#">КУПИТЬ БИЛЕТ</a>
-                    </div>
-                  </div>
-                  <div class="news-preview">
-                    <div class="news-preview__img _br"> 
-                      <picture>
-                        <source type="image/webp" srcset="img/a-4.webp"/><img alt="" src="img/a-4.jpg"/>
-                      </picture>
-                    </div>
-                    <div class="news-preview__content">
-                      <div class="news-preview__head-row"> 
-                        <div class="news-preview__tags">альметьевск</div><span class="news-preview__date">6 марта 2023</span><span class="_divider"></span><span class="news-preview__time">10:45</span>
-                      </div><a class="news-preview__title h3" htef="#">Самые быстрые в &quot;Татнефти&quot;</a>
-                    </div>
-                  </div>
-                  <div class="news-preview">
-                    <div class="news-preview__img _br"> 
-                      <picture>
-                        <source type="image/webp" srcset="img/a-5.webp"/><img alt="" src="img/a-5.jpg"/>
-                      </picture>
-                    </div>
-                    <div class="news-preview__content">
-                      <div class="news-preview__head-row"> 
-                        <div class="news-preview__tags">нурлат</div><span class="news-preview__date">6 марта 2023</span><span class="_divider"></span><span class="news-preview__time">10:45</span>
-                      </div><a class="news-preview__title h3" htef="#">Выставка тюркских музыкальных инструментов</a>
-                    </div>
-                  </div>
-                  <div class="news-preview">
-                    <div class="news-preview__img _br"> 
-                      <picture>
-                        <source type="image/webp" srcset="img/n-2.webp"/><img alt="" src="img/n-2.jpg"/>
-                      </picture>
-                    </div>
-                    <div class="news-preview__content">
-                      <div class="news-preview__head-row"> 
-                        <div class="news-preview__tags">Анонс</div><span class="news-preview__date">Вторник, 23 Августа 2022 </span><span class="_divider"></span><span class="news-preview__time">10:45</span>
-                      </div><a class="news-preview__title h3" htef="#">«Татнефть» — лучшая по работе со студентами</a>
-                    </div>
-                  </div>
-                  <div class="news-preview">
-                    <div class="news-preview__img _br"> 
-                      <picture>
-                        <source type="image/webp" srcset="img/n-3.webp"/><img alt="" src="img/n-3.jpg"/>
-                      </picture>
-                    </div>
-                    <div class="news-preview__content">
-                      <div class="news-preview__head-row"> 
-                        <div class="news-preview__tags">Анонс</div><span class="news-preview__date">Вторник, 23 Августа 2022 </span><span class="_divider"></span><span class="news-preview__time">10:45</span>
-                      </div><a class="news-preview__title h3" htef="#">«Татнефть» приняла на работу трех роботов</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="paginator"> 
-                  <button class="paginator__prev" type="button"><svg width="23" height="15" viewBox="0 0 23 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M8.16018 1.68057L2.00047 7.84029M2.00047 7.84029L8.16018 14M2.00047 7.84029L22.0195 7.84029" stroke="#B1B3B2" stroke-width="2"/>
-</svg>
-                  </button>
-                  <button class="paginator__page _active" type="button">1</button>
-                  <button class="paginator__page" type="button">2</button>
-                  <button class="paginator__page" type="button">3</button>
-                  <button class="paginator__page" type="button">4</button>
-                  <button class="paginator__page" type="button">5</button>
-                  <button class="paginator__page" type="button">6</button>
-                  <button class="paginator__next" type="button"><svg width="22" height="15" viewBox="0 0 22 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M13.8789 1.68057L20.0386 7.84029M20.0386 7.84029L13.8789 14M20.0386 7.84029L0.019531 7.84029" stroke="#D0B787" stroke-width="2"/>
-</svg>
-                  </button>
+            <div class="top-bg-img _br block" data-aos="fade">
+              <div class="top-bg-img__bg">
+                <picture>
+                  <source type="image/webp" srcset="img/legend-1.webp"/><img alt="" src="img/legend-1.jpg"/>
+                </picture>
+              </div>
+              <h1 class="h2">Легенда города Альметьевск</h1>
+              <div class="text _ml-0 _w1150">
+                <div class="text-2-column">
+                  <p>Благоустроенный и прогрессивный город, в котором живут десятки тысяч счастливых семей, увлеченных предпринимателей, амбициозных учёных, инженеров  и исследователей. Больше, чем город нефтяников на юго-востоке Татарстана.</p>
+                  <p>Каждый день здесь разрабатываются наиболее перспективные в регионе месторождения науки,  культуры знаний, спорта и экологии. </p>
                 </div>
               </div>
-              <div class="news-main__right">
-                <div class="news-events _br">
-                  <div class="news-events__img"> 
-                    <picture>
-                      <source type="image/webp" srcset="img/n-4.webp"/><img alt="" src="img/n-4.jpg"/>
-                    </picture>
+            </div>
+            <div class="block text-2-block" data-aos="fade"> 
+              <div class="text">
+                <h2> 
+                  <color>Сегодня Альметьевск — город, открытый  для амбициозных проектов и начинаний. </color>Город, который поддерживает инициативы и помогает развиваться не только коренным жителям, но и гостям.
+                </h2>
+                <p>Современный Альметьевск — больше, чем месторождения нефти, это место рождения науки, культуры, знаний, спорта и экологии для сотен тысяч энтузиастов. Трудолюбивые жители превратили нефтяные месторождения в место рождения прорывных идей и инженерных решений, создали комфортную атмосферу для себя и своих семей.</p>
+              </div>
+              <div class="text">
+                <p>Вдохновленные первооткрыватели развивали город, расширяли его инфраструктуру: создавали театры, галереи   и музеи, возводили спортивные и жилые комплексы, разбили ландшафтные парки, открыли научные лаборатории   и университеты с прорывными учебными технологиями.</p>
+                <p>Интерес к активному образу жизни привёл к тому, что в городе создали современную велосипедную инфраструктуру, включая самую длинную велодорожку в России и систему байкшеринга.<br>Город трансформировался из нефтяной столицы Татарстана в продуманное до мелочей место рождения новых идей, возможностей и перспектив.</p>
+              </div>
+            </div>
+            <div class="video-block _br block" data-aos="fade">
+              <video class="video-hover-play" src="video/placeholder.mp4#t=0.001" playsinline loop muted></video>
+            </div>
+            <div class="block" data-aos="fade">
+              <h2>Что означает название города?</h2>
+              <div class="text-2-block"> 
+                <div>
+                  <p> 
+                    <color>Альметьево (Әлмәт) обосновал мулла Альмухаммат живший в 18 веке, который переселился из нынешнего Сармановского района на очень богатые природными ресурсами земли поймы реки Зай. Название поселения образовалось путем сложения первого и четвертого слогов от его имени - Аль+мат (Әл+мәт).</color>
+                  </p>
+                </div>
+                <div>
+                  <p>Мулла являлся прямым потомком легендарного булгарского хана Бикчуры, выступившего против нашествия Бату хана и погибшего от ран, полученных в битве с монголами.</p>
+                </div>
+              </div>
+            </div>
+            <div class="legend-1 block">
+              <div data-aos="fade-left">
+                <div class="legend-1__year"> В 1740 году</div>
+              </div>
+              <div class="legend-1__row"> 
+                <div class="legend-1__left"> 
+                  <div data-aos="fade"> 
+                    <p> 
+                      <color>Восточное Закамье — место, где еще в первой половине XVIII появились деревни сегодняшнего Альметьевского района.</color>
+                    </p>
+                    <p>мулла Альмухаммат, прямой потомок булгарского хана Бикчуры, основал здесь Альметьево. Богатые природными ресурсами территории поймы реки Зай привлекли первых энтузиастов возможностью осваивать земли, заниматься сельским хозяйством и добывать медную руду. </p>
                   </div>
-                  <div class="news-events__content">
-                    <div class="news-events__title h3">НЕФТЯННИК — АК БАРС</div>
-                    <div class="news-events__time">15 февраля, 19:00</div><a class="news-events__link" href="#">КУПИТЬ БИЛЕТ</a>
+                  <div class="legend-1__row2"> 
+                    <div class="legend-1__img" data-aos="fade-up">
+                      <picture>
+                        <source type="image/webp" srcset="img/legend-2.webp"/><img class="_br" alt="" src="img/legend-2.jpg"/>
+                      </picture>
+                    </div>
+                    <div class="legend-1__img-2" data-aos="fade-up" data-aos-delay="300">
+                      <picture>
+                        <source type="image/webp" srcset="img/legend-3.webp"/><img class="_br" alt="" src="img/legend-3.jpg"/>
+                      </picture>
+                    </div>
                   </div>
                 </div>
-                <div class="news-main__fixed-wrap">
-                  <div class="news-mini-block sticky">
-                    <div class="h3"> 
-                      <color>Афиша</color>
+                <div data-aos="fade">
+                  <div class="one-img-slider swiper _br">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide"> 
+                        <picture>
+                          <source type="image/webp" srcset="img/legend-4.webp"/><img alt="" src="img/legend-4.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="swiper-slide"> 
+                        <picture>
+                          <source type="image/webp" srcset="img/legend-4.webp"/><img alt="" src="img/legend-4.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="swiper-slide"> 
+                        <picture>
+                          <source type="image/webp" srcset="img/legend-4.webp"/><img alt="" src="img/legend-4.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="swiper-slide"> 
+                        <picture>
+                          <source type="image/webp" srcset="img/legend-4.webp"/><img alt="" src="img/legend-4.jpg"/>
+                        </picture>
+                      </div>
+                    </div><a class="one-img-slider__link" href="#"></a>
+                    <div class="one-img-slider__footer"> 
+                      <div class="one-img-slider__autoplay"><svg width="26" height="26" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle opacity="0.3" r="11" cx="12" cy="12"  stroke="white" stroke-width="2"/>
+<circle class="one-img-slider__slider-autoplay-circle" r="11" cx="12" cy="12"  stroke="white" stroke-width="2"/>
+<circle r="6" cx="12" cy="12"  fill="white" />
+</svg>
+                      </div>
+                      <div class="one-img-slider__nav">
+                        <div class="one-img-slider__prev"><svg   viewBox="0 0 30 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.6154 0.999999L2 9.5M2 9.5L10.6154 18M2 9.5L11.5 9.5L30 9.5" stroke="currentColor" stroke-width="2"/>
+<path d="M10.6152 1L1.99985 9.5L10.6152 18" stroke="currentColor" stroke-width="2"/>
+</svg>
+                        </div>
+                        <div class="one-img-slider__next"><svg   viewBox="0 0 30 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.3846 0.999999L28 9.5M28 9.5L19.3846 18M28 9.5L-3.71547e-07 9.5" stroke="currentColor" stroke-width="2"/>
+<path d="M19.3848 1L28.0001 9.5L19.3848 18" stroke="currentColor" stroke-width="2"/>
+</svg>
+                        </div>
+                      </div>
                     </div>
-                    <div class="news-mini-block__list"> 
-                      <div class="news-mini">
-                        <div class="news-mini__time-row"> <span class="news-mini__date">3 марта 2023</span><span class="_divider"></span><span class="news-mini__time">10:45</span></div><a class="news-mini__title" htef="#">Казанский «Ак Барс» сегодня играет нефтяной матч с омским «Авангардом»</a>
-                      </div>
-                      <div class="news-mini">
-                        <div class="news-mini__time-row"> <span class="news-mini__date">3 марта 2023</span><span class="_divider"></span><span class="news-mini__time">10:45</span></div><a class="news-mini__title" htef="#">Стартует новая заявочная кампания конкурса молодежных инициативных проектов «Татнефть – платформа твоих возможностей»!</a>
-                      </div>
-                      <div class="news-mini">
-                        <div class="news-mini__time-row"> <span class="news-mini__date">3 марта 2023</span><span class="_divider"></span><span class="news-mini__time">10:45</span></div><a class="news-mini__title" htef="#">Продолжаются активные выходные — а это значит,  что сегодня вновь Спартакиада «Татнефти», в рамках которой прошла битва лучших ракеток </a>
-                      </div>
-                      <div class="news-mini">
-                        <div class="news-mini__time-row"> <span class="news-mini__date">3 марта 2023</span><span class="_divider"></span><span class="news-mini__time">10:45</span></div><a class="news-mini__title" htef="#">В Елабуге прошел конкурс профессионального мастерства</a>
-                      </div>
-                    </div><a class="link-arrow" href="#">Все новости</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="legend-2 block" data-aos="fade"> 
+              <div class="text">
+                <h2>Позже
+                  <color>по Указу Екатерины II  </color>через Альметьево проложили тракт Казань - Оренбург, ускорив развитие региона.
+                </h2>
+              </div>
+              <div class="legend-2__img-wrap _br">
+                <div class="legend-2__img">
+                  <picture>
+                    <source type="image/webp" srcset="img/legend-5.webp"/><img alt="" src="img/legend-5.jpg"/>
+                  </picture>
+                </div>
+                <div class="text">
+                  <div class="text-2-column">
+                    <p>Дорога превратилась в постоянное место встречи общительных купцов, талантливых ремесленников, уникальных мастеров  и активных торговцев. С 1836 года жители Альметьева стали организовывать ежегодные ярмарки, которые были известны  не только в России, но и за ее пределами.</p>
+                    <p>Первая половина 20 века по-настоящему закалила характер местных жителей. Альметьево героически пережило бури классовой борьбы, страшный голод  и эпидемии, научив людей находить в себе силы бороться за будущее   и непрерывно искать неординарные пути выхода из кризиса. </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="legend-3 bloc">
+              <div data-aos="fade-left">
+                <div class="legend-3__year"> В 1948 году</div>
+              </div>
+              <div class="textk" data-aos="fade"> 
+                <p>
+                  <color>на юго-востоке Татарстана бригада нефтяников обнаружила одно из крупнейших месторождений в мире — Ромашкинское. <br>С тех пор потомственные  бурильщики, инженеры и ученые трансформируют месторождение нефти в места рождения новых предприятий, нового бизнеса, прорывных идей и инженерных решений.  </color>
+                </p>
+                <p>Альметьевцы других профессий параллельно развивают новые месторождения творчества, воображения, заботы, объятий и эмоций. По примеру своих отцов жители города вместе улучшают Альметьевск и его инфраструктуру, чтобы создать все условия для комфортной жизни нынешнего  и последующих поколений.</p>
+              </div>
+              <div class="one-img-slider swiper _brk" data-aos="fade"> 
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide"> 
+                    <picture>
+                      <source type="image/webp" srcset="img/legend-5.webp"/><img alt="" src="img/legend-5.jpg"/>
+                    </picture>
+                  </div>
+                  <div class="swiper-slide"> 
+                    <picture>
+                      <source type="image/webp" srcset="img/legend-4.webp"/><img alt="" src="img/legend-4.jpg"/>
+                    </picture>
+                  </div>
+                  <div class="swiper-slide"> 
+                    <picture>
+                      <source type="image/webp" srcset="img/legend-5.webp"/><img alt="" src="img/legend-5.jpg"/>
+                    </picture>
+                  </div>
+                  <div class="swiper-slide"> 
+                    <picture>
+                      <source type="image/webp" srcset="img/legend-4.webp"/><img alt="" src="img/legend-4.jpg"/>
+                    </picture>
+                  </div>
+                </div>
+                <div class="one-img-slider__footer"> 
+                  <div class="one-img-slider__autoplay"><svg width="26" height="26" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle opacity="0.3" r="11" cx="12" cy="12"  stroke="white" stroke-width="2"/>
+<circle class="one-img-slider__slider-autoplay-circle" r="11" cx="12" cy="12"  stroke="white" stroke-width="2"/>
+<circle r="6" cx="12" cy="12"  fill="white" />
+</svg>
+                  </div>
+                  <div class="one-img-slider__nav">
+                    <div class="one-img-slider__prev"><svg   viewBox="0 0 30 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.6154 0.999999L2 9.5M2 9.5L10.6154 18M2 9.5L11.5 9.5L30 9.5" stroke="currentColor" stroke-width="2"/>
+<path d="M10.6152 1L1.99985 9.5L10.6152 18" stroke="currentColor" stroke-width="2"/>
+</svg>
+                    </div>
+                    <div class="one-img-slider__next"><svg   viewBox="0 0 30 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.3846 0.999999L28 9.5M28 9.5L19.3846 18M28 9.5L-3.71547e-07 9.5" stroke="currentColor" stroke-width="2"/>
+<path d="M19.3848 1L28.0001 9.5L19.3848 18" stroke="currentColor" stroke-width="2"/>
+</svg>	
+                    </div>
                   </div>
                 </div>
               </div>
