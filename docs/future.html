@@ -23,7 +23,7 @@
       
       
     </script>
-    <div class="preloader">
+    <div class="preloader" id="preloader">
       <script>
         function getCookie(e, t = !1) {
         	if (!e) return;
@@ -59,10 +59,21 @@
         function deleteCookie(e) {
         	setCookie(e, null, { expires: new Date(), path: "/" });
         }
+        
+        
+        let preloader = document.querySelector(".preloader")
+        
         if (isCityChange==false && getCookie("load")) {
         	document.querySelector(".preloader").remove();
         } else {}
-      </script>
+        	setTimeout(function(){let preloader = document.querySelector(".preloader")
+        		if(window.innerWidth<1000){
+        	preloader.scrollLeft= 500 - window.innerWidth/2;
+        }
+        },100)
+      </script><svg class="preloader__scroll-icon " width="26" height="30" viewBox="0 0 26 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 20V17M9 17V7C9 5.89543 9.89543 5 11 5C12.1046 5 13 5.89543 13 7V15H19.7059C21.5252 15 23 16.4748 23 18.2941V20C23 24.9706 18.9706 29 14 29H13C8.58172 29 5 25.4183 5 21C5 18.7909 6.79086 17 9 17ZM16 11H20C22.7614 11 25 8.76142 25 6C25 3.23858 22.7614 1 20 1H6C3.23858 1 1 3.23858 1 6C1 8.76142 3.23858 11 6 11" stroke="white"/>
+</svg>
       <div class="preloader__flex"> </div>
       <div class="preloader__circles"><svg  class="preloader__circle _it-1" width="262" height="261" viewBox="0 0 262 261" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M235.549 206.188C237.586 206.188 239.237 204.537 239.237 202.5C239.237 200.463 237.586 198.812 235.549 198.812C233.513 198.812 231.862 200.463 231.862 202.5C231.862 204.537 233.513 206.188 235.549 206.188Z" fill="#212121"/>
@@ -1691,102 +1702,101 @@
               </div>
               <div class="swiper plan-slider">
                 <div class="swiper-wrapper"> 
-                  <div class="swiper-slide" data-aos data-aos-delay="200">
-                    <div class="plan-slider__graph _bg-white-black _br"><img class="plan-slider__graph-bg" src="img/plan-circle-bg.svg" alt>
-                      <div class="h3">Рабочие места</div>
-                      <div class="plan-slider__graf-3">
-                        <div class="plan-slider__graf-3-start">
-                          <div class="plan-slider__graf-3-start-circle" data-count="83908">83 908</div>
-                          <div class="plan-slider__graf-3-start-year">2023</div>
+                  <div class="swiper-slide plan-slider__graph _bg-white-black _br" data-aos data-aos-delay="200">
+                    <div class="h3">Планы увеличения рабочих мест</div>
+                    <div class="plan-slider__graf-6">
+                      <div class="plan-slider__graf-6-start">
+                        <div class="plan-slider__graf-6-start-circle"> 
+                          <div class="plan-slider__graf-6-start-circle-number" data-count="83908">83 908</div>
+                          <p>текущее <br>количество</p>
+                          <div class="plan-slider__graf-6-start-years">2023</div>
                         </div>
-                        <div class="plan-slider__graf-3-finish">
-                          <div class="plan-slider__graf-3-finish-circle" data-count="167816">167 816</div>
-                          <div class="plan-slider__graf-3-finish-year">2040</div>
+                      </div>
+                      <div class="plan-slider__graf-6-line"> <span></span><span></span><span></span><span></span><span></span><span></span></div>
+                      <div class="plan-slider__graf-6-finish">
+                        <div class="plan-slider__graf-6-finish-circle">
+                          <div class="plan-slider__graf-6-finish-circle-number" data-count="83908">83 908</div>
+                          <p>планируемое<br>количество</p>
+                          <div class="plan-slider__graf-6-finish-years">2040</div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <div class="swiper-slide" data-aos data-aos-delay="400">
-                    <div class="plan-slider__graph _bg-gold _br">
-                      <div class="h3">Количество занятых в сфере услуг</div>
-                      <div class="plan-slider__graf-2">
-                        		<svg viewBox="0 0 602 193" fill="none" xmlns="http://www.w3.org/2000/svg" >
-<path opacity="0.1" d="M10 164L28.4654 151.136C43.7189 140.51 64.2787 141.776 78.1141 154.192V154.192C87.7665 162.855 101.016 166.307 113.668 163.458L131.828 159.368C143.127 156.823 153.696 151.733 162.731 144.487L164.55 143.028C185.052 126.583 211.936 120.39 237.567 126.207L245.557 128.02C259.804 131.253 274.714 129.8 288.069 123.877L311.125 113.65C322.248 108.717 335.247 110.97 344.06 119.358V119.358C357.928 132.558 380.434 129.615 390.442 113.294L397.561 101.685C401.447 95.3473 406.981 90.1824 413.571 86.7409L432.916 76.6382C443.226 71.254 452.518 64.1124 460.374 55.5346L472.609 42.1744C485.275 28.3434 501.611 18.397 519.714 13.4942V13.4942C533.089 9.87182 547.075 9.0991 560.768 11.2261L591.5 16" stroke="white" stroke-width="20" stroke-linecap="round" class="svg-elem-1"></path>
-<path d="M10 164L28.4654 151.136C43.7189 140.51 64.2787 141.776 78.1141 154.192V154.192C87.7665 162.855 101.016 166.307 113.668 163.458L131.828 159.368C143.127 156.823 153.696 151.733 162.731 144.487L164.55 143.028C185.052 126.583 211.936 120.39 237.567 126.207L245.557 128.02C259.804 131.253 274.714 129.8 288.069 123.877L311.125 113.65C322.248 108.717 335.247 110.97 344.06 119.358V119.358C357.928 132.558 380.434 129.615 390.442 113.294L397.561 101.685C401.447 95.3473 406.981 90.1824 413.571 86.7409L432.916 76.6382C443.226 71.254 452.518 64.1124 460.374 55.5346L472.609 42.1744C485.275 28.3434 501.611 18.397 519.714 13.4942V13.4942C533.089 9.87182 547.075 9.0991 560.768 11.2261L591.5 16" stroke="white" stroke-width="10" stroke-linecap="round" class="svg-elem-2"></path>
-<g filter="url(#filter0_d_859_1055)">
-<circle cx="485" cy="29" r="17" fill="#D0B787" class="svg-elem-3"></circle>
-<circle cx="485" cy="29" r="12" stroke="white" stroke-width="10" class="svg-elem-4"></circle>
-</g>
-<g filter="url(#filter1_d_859_1055)">
-<circle cx="97" cy="164" r="17" fill="#D0B787" class="svg-elem-5"></circle>
-<circle cx="97" cy="164" r="12" stroke="white" stroke-width="10" class="svg-elem-6"></circle>
-</g>
-<defs>
-<filter id="filter0_d_859_1055" x="462" y="12" width="46" height="46" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-<feOffset dy="6"></feOffset>
-<feGaussianBlur stdDeviation="3"></feGaussianBlur>
-<feComposite in2="hardAlpha" operator="out"></feComposite>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"></feColorMatrix>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_859_1055"></feBlend>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_859_1055" result="shape"></feBlend>
-</filter>
-<filter id="filter1_d_859_1055" x="74" y="147" width="46" height="46" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
-<feOffset dy="6"></feOffset>
-<feGaussianBlur stdDeviation="3"></feGaussianBlur>
-<feComposite in2="hardAlpha" operator="out"></feComposite>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"></feColorMatrix>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_859_1055"></feBlend>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_859_1055" result="shape"></feBlend>
-</filter>
-</defs>
+                  <div class="swiper-slide plan-slider__graph _bg-gold _br" data-aos data-aos-delay="400">
+                    <div class="h3">Количество занятых в сфере услуг</div>
+                    <div class="plan-slider__graf-7">
+                      <div class="plan-slider__graf-7-line"><span> </span><span></span>
+                        <div class="plan-slider__graf-7-start">
+                          <div class="plan-slider__graf-7-start-year">2023 г.</div>
+                          <div class="plan-slider__graf-7-start-content">
+                            <div class="plan-slider__graf-7-start-value" data-count="33563"> 33 563</div>
+                            <div class="plan-slider__graf-7-start-desc">текущее количество</div>
+                          </div>
+                        </div>
+                        <div class="plan-slider__graf-7-finish">
+                          <div class="plan-slider__graf-7-finish-year">2040 г.</div>
+                          <div class="plan-slider__graf-7-finish-content">
+                            <div class="plan-slider__graf-7-finish-value" data-count="117471"> 117 471</div>
+                            <div class="plan-slider__graf-7-finish-desc">планируемое количество</div>
+                          </div>
+                        </div>
+                        <div class="plan-slider__graf-7-rost">планируемый рост</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide plan-slider__graph _bg-dark _br" data-aos data-aos-delay="600">
+                    <div class="h3">Планы застройки жилой площади</div>
+                    <div class="plan-slider__graf-8">
+                      <div class="plan-slider__graf-8-line">
+                        <div class="plan-slider__graf-8-head">
+                          <div class="plan-slider__graf-8-procent _gray"><span data-count="40">40</span>% </div>
+                          <div>текущее количество</div>
+                        </div><svg class="plan-slider__graf-8-svg" viewBox="0 0 333 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M326.849 16.5299C330.08 16.5299 332.699 13.911 332.699 10.6805C332.699 7.44993 330.08 4.83105 326.849 4.83105C323.619 4.83105 321 7.44993 321 10.6805C321 13.911 323.619 16.5299 326.849 16.5299Z" fill="#D0B787"/>
+<path d="M275.96 16.6398C279.251 16.6398 281.919 13.9716 281.919 10.6802C281.919 7.38888 279.251 4.7207 275.96 4.7207C272.668 4.7207 270 7.38888 270 10.6802C270 13.9716 272.668 16.6398 275.96 16.6398Z" fill="#D0B787"/>
+<path d="M220.68 21.3607C226.579 21.3607 231.361 16.579 231.361 10.6804C231.361 4.78176 226.579 0 220.68 0C214.782 0 210 4.78176 210 10.6804C210 16.579 214.782 21.3607 220.68 21.3607Z" fill="#D0B787"/>
+<path d="M161.455 20.1357C166.678 20.1357 170.911 15.9024 170.911 10.6803C170.911 5.45819 166.678 1.22485 161.455 1.22485C156.233 1.22485 152 5.45819 152 10.6803C152 15.9024 156.233 20.1357 161.455 20.1357Z" fill="#D0B787"/>
+<path d="M105.951 17.631C109.789 17.631 112.901 14.5191 112.901 10.6805C112.901 6.84182 109.789 3.72998 105.951 3.72998C102.112 3.72998 99 6.84182 99 10.6805C99 14.5191 102.112 17.631 105.951 17.631Z" fill="#D0B787"/>
+<path d="M56.4408 14.1212C58.3412 14.1212 59.8817 12.5807 59.8817 10.6803C59.8817 8.78002 58.3412 7.2395 56.4408 7.2395C54.5405 7.2395 53 8.78002 53 10.6803C53 12.5807 54.5405 14.1212 56.4408 14.1212Z" fill="#D0B787"/>
+<path d="M6.88168 17.5622C10.6823 17.5622 13.7634 14.4812 13.7634 10.6805C13.7634 6.87986 10.6823 3.79883 6.88168 3.79883C3.08103 3.79883 0 6.87986 0 10.6805C0 14.4812 3.08103 17.5622 6.88168 17.5622Z" fill="#D0B787"/>
 </svg>
-                        <div class="plan-slider__graf-2-start">
-                          <div class="plan-slider__graf-2-start-year">2023</div>
-                          <div class="plan-slider__graf-2-start-value" data-count="33563"> 33 563</div>
-                        </div>
-                        <div class="plan-slider__graf-2-finish">
-                          <div class="plan-slider__graf-2-finish-year">2023</div>
-                          <div class="plan-slider__graf-2-finish-value" data-count="117471"> 117 471</div>
-                        </div>
+                        <div class="plan-slider__graf-8-year">в 2023 году</div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="swiper-slide" data-aos data-aos-delay="600">
-                    <div class="plan-slider__graph _bg-dark _br">
-                      <div class="h3">Число предприятий сферы услуг планируем увеличить</div>
-                      <div class="plan-slider__graf-5">
-                        <div class="plan-slider__graf-5-line">
-                          <div class="plan-slider__graf-5-progress" data-progress="40">
-                            <div class="plan-slider__graf-5-procent _gray"><span data-count="40">40</span>%</div>
-                          </div>
-                        </div>
-                        <div class="plan-slider__graf-5-year">2022</div>
-                      </div>
-                      <div class="plan-slider__graf-5">
-                        <div class="plan-slider__graf-5-line">
-                          <div class="plan-slider__graf-5-progress" data-progress="70">
-                            <div class="plan-slider__graf-5-procent"><span data-count="70">70</span>%</div>
-                          </div>
-                        </div>
-                        <div class="plan-slider__graf-5-year">2040</div>
+                      <div class="plan-slider__graf-8-line">
+                        <div class="plan-slider__graf-8-head">
+                          <div class="plan-slider__graf-8-procent"><span data-count="70">70</span>% </div>
+                          <div>планируемое количество</div>
+                        </div><svg class="plan-slider__graf-8-svg"  viewBox="0 0 550 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M536.227 27.4441C543.531 27.4441 549.453 21.5224 549.453 14.2176C549.453 6.91271 543.531 0.990967 536.227 0.990967C528.922 0.990967 523 6.91271 523 14.2176C523 21.5224 528.922 27.4441 536.227 27.4441Z" fill="#D0B787"/>
+<path d="M474.776 21.9938C479.071 21.9938 482.553 18.5122 482.553 14.2175C482.553 9.92273 479.071 6.44116 474.776 6.44116C470.482 6.44116 467 9.92273 467 14.2175C467 18.5122 470.482 21.9938 474.776 21.9938Z" fill="#D0B787"/>
+<path d="M421.638 18.8558C424.2 18.8558 426.277 16.7792 426.277 14.2176C426.277 11.656 424.2 9.57935 421.638 9.57935C419.077 9.57935 417 11.656 417 14.2176C417 16.7792 419.077 18.8558 421.638 18.8558Z" fill="#D0B787"/>
+<path d="M368.941 22.159C373.327 22.159 376.883 18.6035 376.883 14.2176C376.883 9.83164 373.327 6.27612 368.941 6.27612C364.555 6.27612 361 9.83164 361 14.2176C361 18.6035 364.555 22.159 368.941 22.159Z" fill="#D0B787"/>
+<path d="M306.218 28.4351C314.07 28.4351 320.435 22.0697 320.435 14.2176C320.435 6.36542 314.07 0 306.218 0C298.365 0 292 6.36542 292 14.2176C292 22.0697 298.365 28.4351 306.218 28.4351Z" fill="#D0B787"/>
+<path d="M238.58 26.7971C245.527 26.7971 251.159 21.165 251.159 14.2174C251.159 7.26983 245.527 1.6377 238.58 1.6377C231.632 1.6377 226 7.26983 226 14.2174C226 21.165 231.632 26.7971 238.58 26.7971Z" fill="#D0B787"/>
+<path d="M176.249 23.4667C181.357 23.4667 185.498 19.3258 185.498 14.2177C185.498 9.10966 181.357 4.96875 176.249 4.96875C171.141 4.96875 167 9.10966 167 14.2177C167 19.3258 171.141 23.4667 176.249 23.4667Z" fill="#D0B787"/>
+<path d="M121.583 18.8007C124.114 18.8007 126.166 16.7487 126.166 14.2175C126.166 11.6862 124.114 9.63428 121.583 9.63428C119.052 9.63428 117 11.6862 117 14.2175C117 16.7487 119.052 18.8007 121.583 18.8007Z" fill="#D0B787"/>
+<path d="M67.6159 22.8335C72.3743 22.8335 76.2317 18.9761 76.2317 14.2177C76.2317 9.45926 72.3743 5.60181 67.6159 5.60181C62.8575 5.60181 59 9.45926 59 14.2177C59 18.9761 62.8575 22.8335 67.6159 22.8335Z" fill="#D0B787"/>
+<path d="M9.1664 23.3838C14.2289 23.3838 18.3328 19.2799 18.3328 14.2174C18.3328 9.15497 14.2289 5.05103 9.1664 5.05103C4.10394 5.05103 0 9.15497 0 14.2174C0 19.2799 4.10394 23.3838 9.1664 23.3838Z" fill="#D0B787"/>
+</svg>
+                        <div class="plan-slider__graf-8-year">в 2040 году</div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <button class="plan-slider__prev" type="button"><svg   viewBox="0 0 30 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div class="plan-slider__prev-zone">
+                  <button class="plan-slider__prev" type="button"><svg   viewBox="0 0 30 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M10.6154 0.999999L2 9.5M2 9.5L10.6154 18M2 9.5L11.5 9.5L30 9.5" stroke="currentColor" stroke-width="2"/>
 <path d="M10.6152 1L1.99985 9.5L10.6152 18" stroke="currentColor" stroke-width="2"/>
 </svg>
-                </button>
-                <button class="plan-slider__next" type="button"><svg   viewBox="0 0 30 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  </button>
+                </div>
+                <div class="plan-slider__next-zone">
+                  <button class="plan-slider__next" type="button"><svg   viewBox="0 0 30 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M19.3846 0.999999L28 9.5M28 9.5L19.3846 18M28 9.5L-3.71547e-07 9.5" stroke="currentColor" stroke-width="2"/>
 <path d="M19.3848 1L28.0001 9.5L19.3848 18" stroke="currentColor" stroke-width="2"/>
 </svg>
-                </button>
+                  </button>
+                </div>
               </div>
             </div>
             <div class="block items-slider" id="items-slider">
