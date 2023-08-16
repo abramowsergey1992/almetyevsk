@@ -64,7 +64,7 @@
         let preloader = document.querySelector(".preloader")
         
         if (isCityChange==false && getCookie("load")) {
-        	document.querySelector(".preloader").remove();
+        	document.querySelector(".preloader").style.display=none;
         } else {}
         	setTimeout(function(){let preloader = document.querySelector(".preloader")
         		if(window.innerWidth<1000){
@@ -1536,9 +1536,26 @@
       </div>
       <div class="preloader__content">
         <div class="preloader__name h2">АЛЬМЕТЬЕВСК</div>
-        <div class="preloader__desc h3">МЕСТО РОЖДЕНИЯ месторождений</div>
+        <div class="preloader__desc">МЕСТО РОЖДЕНИЯ <span class="preloader__desc-slider"> <span class="_active">МЕСТОРОЖДЕНИЙ</span><span>КУЛЬТУРЫ</span><span>ИДЕЙ</span><span>спорта</span><span>Науки</span><span>инвистиций</span><span>ИДЕЙ		</span></span></div>
       </div>
       <div class="preloader__cities"><a class="preloader__city _top" href="#"><span>Актюба</span></a><a class="preloader__city _top _active" href="#"><span>Альметьевск</span></a><a class="preloader__city _top" href="#"><span>АзнакАЕво</span></a><a class="preloader__city _top" href="#"><span>Нижнекамск</span></a><a class="preloader__city" href="#"><span>Елабуга</span></a><a class="preloader__city" href="#"><span>Нурлат</span></a><a class="preloader__city" href="#"><span>Лениногорск</span></a><a class="preloader__city" href="#"><span>Джалиль</span></a><a class="preloader__city" href="#"><span>Бугульма</span></a><a class="preloader__city" href="#"><span>Бавлы</span></a></div>
+      <div class="preloader__bottom">
+        <div class="preloader__lb h4">Города, рожденные нефтью</div>
+        <div class="preloader__down">
+           <svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L9 8L17 1" stroke="#D0B787" stroke-width="2"/>
+</svg>
+        </div>
+        <div class="preloader__rb">
+           <svg width="26" height="29" viewBox="0 0 26 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M25 28V13" stroke="#D0B787" stroke-width="2" stroke-linecap="round"/>
+<path d="M19 28L19 1" stroke="#D0B787" stroke-width="2" stroke-linecap="round"/>
+<path d="M13 28L13 8" stroke="#D0B787" stroke-width="2" stroke-linecap="round"/>
+<path d="M7 28L7 4" stroke="#D0B787" stroke-width="2" stroke-linecap="round"/>
+<path d="M1 28L1 19" stroke="#D0B787" stroke-width="2" stroke-linecap="round"/>
+</svg>
+        </div>
+      </div>
     </div>
     <header class="header _header-hidden">
       <div class="inner"> 
@@ -1557,11 +1574,6 @@
               <button class="header__city" type="button"> альметьевск
               </button>
             </div>
-            <button class="header__search" type="button">
-               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M15 15L11.2409 11.2443M7 13C3.68629 13 1 10.3137 1 7C1 3.68629 3.68629 1 7 1C10.3137 1 13 3.68629 13 7C13 10.3137 10.3137 13 7 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-</svg>
-            </button>
             <button class="header__burger"> 
               <div class="header__burger-icon"><span></span><span></span><span></span></div><span class="header__burger-open">меню</span><span class="header__burger-close">закрыть</span>
             </button>
@@ -1624,11 +1636,6 @@
                 <button class="header__city" type="button"> альметьевск
                 </button>
               </div>
-              <button class="header__search" type="button">
-                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M15 15L11.2409 11.2443M7 13C3.68629 13 1 10.3137 1 7C1 3.68629 3.68629 1 7 1C10.3137 1 13 3.68629 13 7C13 10.3137 10.3137 13 7 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-</svg>
-              </button>
               <button class="header__burger"> 
                 <div class="header__burger-icon"><span></span><span></span><span></span></div><span class="header__burger-open">меню</span><span class="header__burger-close">закрыть</span>
               </button>
@@ -1715,7 +1722,7 @@
                       <div class="plan-slider__graf-6-line"> <span></span><span></span><span></span><span></span><span></span><span></span></div>
                       <div class="plan-slider__graf-6-finish">
                         <div class="plan-slider__graf-6-finish-circle">
-                          <div class="plan-slider__graf-6-finish-circle-number" data-count="83908">83 908</div>
+                          <div class="plan-slider__graf-6-finish-circle-number" data-count="167816">167 816</div>
                           <p>планируемое<br>количество</p>
                           <div class="plan-slider__graf-6-finish-years">2040</div>
                         </div>
@@ -1783,14 +1790,14 @@
                     </div>
                   </div>
                 </div>
-                <div class="plan-slider__prev-zone">
+                <div class="plan-slider__prev-zona">
                   <button class="plan-slider__prev" type="button"><svg   viewBox="0 0 30 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M10.6154 0.999999L2 9.5M2 9.5L10.6154 18M2 9.5L11.5 9.5L30 9.5" stroke="currentColor" stroke-width="2"/>
 <path d="M10.6152 1L1.99985 9.5L10.6152 18" stroke="currentColor" stroke-width="2"/>
 </svg>
                   </button>
                 </div>
-                <div class="plan-slider__next-zone">
+                <div class="plan-slider__next-zona">
                   <button class="plan-slider__next" type="button"><svg   viewBox="0 0 30 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M19.3846 0.999999L28 9.5M28 9.5L19.3846 18M28 9.5L-3.71547e-07 9.5" stroke="currentColor" stroke-width="2"/>
 <path d="M19.3848 1L28.0001 9.5L19.3848 18" stroke="currentColor" stroke-width="2"/>
@@ -1817,7 +1824,7 @@
                       </picture>
                     </div>
                     <h3>«Безопасный Альметьевск»</h3>
-                    <p>Оснащение видеонаблюдением общественных пространств, парков и скверов, многоквартирных домов, объектов транспортной инфраструктуры и т.п., в том числе с поддержкой функций видеоаналитики (распознавания лиц) для повышения общественной безопасности.</p>
+                    <p>Оснащение видеонаблюдением общественных пространств, парков и скверов, многоквартирных домов, объектов транспортной инфраструктуры и т.п., в том числе с поддержкой функций видеоаналитики (распознавания лиц) для повышения общественной безопасности.</p><a class="items-slider__link" href="#"></a>
                   </div>
                   <div class="swiper-slide" data-aos="fade" data-aos-delay="200">
                     <div class="items-slider__img _br"> 
@@ -1826,7 +1833,7 @@
                       </picture>
                     </div>
                     <h3>IP домофония</h3>
-                    <p>С помощью мобильного приложения жители могут управлять доступом в подъезд своего дома из любого места. Также домофон оснащен видеокамерой высокого разрешения, что дает жильцам возможность не только разговаривать с гостем, но и видеть его. Кроме того, камера позволяет следить за охватываемой ею придомовой территорией, детьми, автотранспортом и т.д.</p>
+                    <p>С помощью мобильного приложения жители могут управлять доступом в подъезд своего дома из любого места. Также домофон оснащен видеокамерой высокого разрешения, что дает жильцам возможность не только разговаривать с гостем, но и видеть его. Кроме того, камера позволяет следить за охватываемой ею придомовой территорией, детьми, автотранспортом и т.д.</p><a class="items-slider__link" href="#"></a>
                   </div>
                   <div class="swiper-slide" data-aos="fade" data-aos-delay="400"> 
                     <div class="items-slider__img _br"> 
@@ -1835,7 +1842,7 @@
                       </picture>
                     </div>
                     <h3>Дом.Контроль</h3>
-                    <p>Сервис для простого взаимодействия между управляющими компаниями и жителями через мобильное приложение. С помощью данного сервиса можно подавать заявки и отслеживать их статус, передавать показания счетчиков, оплачивать услуги ЖКХ и т.п.</p>
+                    <p>Сервис для простого взаимодействия между управляющими компаниями и жителями через мобильное приложение. С помощью данного сервиса можно подавать заявки и отслеживать их статус, передавать показания счетчиков, оплачивать услуги ЖКХ и т.п.</p><a class="items-slider__link" href="#"></a>
                   </div>
                   <div class="swiper-slide" data-aos="fade" data-aos-delay="600">
                     <div class="items-slider__img _br"> 
@@ -1844,7 +1851,7 @@
                       </picture>
                     </div>
                     <h3>Образовательная карта</h3>
-                    <p>Персональный электронный кошелек школьника для безналичной оплаты питания  в школе и проезда в общественном транспорте</p>
+                    <p>Персональный электронный кошелек школьника для безналичной оплаты питания  в школе и проезда в общественном транспорте</p><a class="items-slider__link" href="#"></a>
                   </div>
                   <div class="swiper-slide" data-aos="fade" data-aos-delay="800">
                     <div class="items-slider__img _br"> 
@@ -1853,7 +1860,7 @@
                       </picture>
                     </div>
                     <h3>«Умный транспорт»</h3>
-                    <p>Мобильное приложение, позволяющее отслеживать и прогнозировать прибытие транспорта на интересующую жителя остановку. Оплата проезда. Осуществлен переход на безналичную оплату проезда в городском общественном транспорте.</p>
+                    <p>Мобильное приложение, позволяющее отслеживать и прогнозировать прибытие транспорта на интересующую жителя остановку. Оплата проезда. Осуществлен переход на безналичную оплату проезда в городском общественном транспорте.</p><a class="items-slider__link" href="#"></a>
                   </div>
                   <div class="swiper-slide" data-aos="fade" data-aos-delay="1000">
                     <div class="items-slider__img _br"> 
@@ -1862,7 +1869,7 @@
                       </picture>
                     </div>
                     <h3>«Безопасный Альметьевск»</h3>
-                    <p>Оснащение видеонаблюдением общественных пространств, парков и скверов, многоквартирных домов, объектов транспортной инфраструктуры и т.п., в том числе с поддержкой функций видеоаналитики (распознавания лиц) для повышения общественной безопасности.</p>
+                    <p>Оснащение видеонаблюдением общественных пространств, парков и скверов, многоквартирных домов, объектов транспортной инфраструктуры и т.п., в том числе с поддержкой функций видеоаналитики (распознавания лиц) для повышения общественной безопасности.</p><a class="items-slider__link" href="#"></a>
                   </div>
                   <div class="swiper-slide" data-aos="fade" data-aos-delay="1200">
                     <div class="items-slider__img _br"> 
@@ -1871,7 +1878,7 @@
                       </picture>
                     </div>
                     <h3>IP домофония</h3>
-                    <p>С помощью мобильного приложения жители могут управлять доступом в подъезд своего дома из любого места. Также домофон оснащен видеокамерой высокого разрешения, что дает жильцам возможность не только разговаривать с гостем, но и видеть его. Кроме того, камера позволяет следить за охватываемой ею придомовой территорией, детьми, автотранспортом и т.д.</p>
+                    <p>С помощью мобильного приложения жители могут управлять доступом в подъезд своего дома из любого места. Также домофон оснащен видеокамерой высокого разрешения, что дает жильцам возможность не только разговаривать с гостем, но и видеть его. Кроме того, камера позволяет следить за охватываемой ею придомовой территорией, детьми, автотранспортом и т.д.</p><a class="items-slider__link" href="#"></a>
                   </div>
                   <div class="swiper-slide" data-aos="fade" data-aos-delay="1400"> 
                     <div class="items-slider__img _br"> 
@@ -1880,7 +1887,7 @@
                       </picture>
                     </div>
                     <h3>Дом.Контроль</h3>
-                    <p>Сервис для простого взаимодействия между управляющими компаниями и жителями через мобильное приложение. С помощью данного сервиса можно подавать заявки и отслеживать их статус, передавать показания счетчиков, оплачивать услуги ЖКХ и т.п.</p>
+                    <p>Сервис для простого взаимодействия между управляющими компаниями и жителями через мобильное приложение. С помощью данного сервиса можно подавать заявки и отслеживать их статус, передавать показания счетчиков, оплачивать услуги ЖКХ и т.п.</p><a class="items-slider__link" href="#"></a>
                   </div>
                   <div class="swiper-slide" data-aos="fade" data-aos-delay="1600">
                     <div class="items-slider__img _br"> 
@@ -1889,7 +1896,7 @@
                       </picture>
                     </div>
                     <h3>Образовательная карта</h3>
-                    <p>Персональный электронный кошелек школьника для безналичной оплаты питания  в школе и проезда в общественном транспорте</p>
+                    <p>Персональный электронный кошелек школьника для безналичной оплаты питания  в школе и проезда в общественном транспорте</p><a class="items-slider__link" href="#"></a>
                   </div>
                   <div class="swiper-slide" data-aos="fade" data-aos-delay="1800">
                     <div class="items-slider__img _br"> 
@@ -1898,7 +1905,7 @@
                       </picture>
                     </div>
                     <h3>«Умный транспорт»</h3>
-                    <p>Мобильное приложение, позволяющее отслеживать и прогнозировать прибытие транспорта на интересующую жителя остановку. Оплата проезда. Осуществлен переход на безналичную оплату проезда в городском общественном транспорте.</p>
+                    <p>Мобильное приложение, позволяющее отслеживать и прогнозировать прибытие транспорта на интересующую жителя остановку. Оплата проезда. Осуществлен переход на безналичную оплату проезда в городском общественном транспорте.</p><a class="items-slider__link" href="#"></a>
                   </div>
                 </div>
                 <div class="items-slider__prev-zona">
@@ -1919,7 +1926,7 @@
             </div>
             <div class="block"> 
               <div class="grid-2">
-                <div class="bg-img-block text _br _mh">
+                <div class="bg-img-block text _br _mh" data-aos="fade">
                   <div class="bg-img-block__bg">
                     <picture>
                       <source type="image/webp" srcset="img/ftb.webp"/><img alt="" src="img/ftb.jpg"/>
@@ -1932,7 +1939,7 @@
                     <p>С 2022 года реализуется концепция мастер-плана городского креативного пространства «Альметьевский креативный хаб». Концепция разработана с участием специалистов Высшей школы экономики (Москва) в рамках проекта «Придумано в России».</p>
                   </div>
                 </div>
-                <div class="content-block text _br _mh">
+                <div class="content-block text _br _mh" data-aos="fade" data-aos-delay="200">
                   <h3>Якорным объектом креативного пространства стал Дворец культуры «Нефтьче», где:</h3>
                   <ul> 
                     <li>идeт трансформация классической библиотеки в креативное пространство «Библионефть»</li>
@@ -2068,7 +2075,7 @@
             </div>
             <div class="block">
               <div class="grid-2">
-                <div class="content-block text _br _mh">
+                <div class="content-block text _br _mh" data-aos="fade">
                   <h2>Наука</h2>
                   <p>Для раскрытия научного потенциала жителей и привлечения в Альметьевск лучших научных кадров продолжим проводить </p>
                   <ul> 
@@ -2082,7 +2089,7 @@
                     <li>продолжим внедрять компетенции Worldskills в учебные программы всех образовательных учреждений.</li>
                   </ul>
                 </div>
-                <div class="content-block text _br _mh _dark-style">
+                <div class="content-block text _br _mh _dark-style" data-aos="fade">
                   <h2>Образование</h2>
                   <p>На постоянной основе планируем:</p>
                   <ul> 
@@ -2096,7 +2103,7 @@
                     <li>проводить долгосрочные целевые программы по сохранению культуры, языка  и традиционного образа жизни коренных народов Татарстана.</li>
                   </ul>
                 </div>
-                <div class="bg-img-block text _br _mh _col-2">
+                <div class="bg-img-block text _br _mh _col-2" data-aos="fade">
                   <div class="bg-img-block__bg">
                     <picture>
                       <source type="image/webp" srcset="img/health.webp"/><img alt="" src="img/health.jpg"/>
@@ -2130,7 +2137,7 @@
                   <p>В рамках дальнейшего развития спортивной инфраструктуры планируется строительство:</p>
                 </div>
               </div>
-              <div class="text _w-100">
+              <div class="text _w-100" data-aos="fade">
                 <ul class="_column-2"> 
                   <li>продолжим развивать грантовую систему</li>
                   <li>создадим новые и продолжим развивать существующие промышленные парки, предоставляющие малому бизнесу производственную инфраструктуру и площади</li>

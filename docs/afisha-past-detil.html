@@ -64,7 +64,7 @@
         let preloader = document.querySelector(".preloader")
         
         if (isCityChange==false && getCookie("load")) {
-        	document.querySelector(".preloader").remove();
+        	document.querySelector(".preloader").style.display=none;
         } else {}
         	setTimeout(function(){let preloader = document.querySelector(".preloader")
         		if(window.innerWidth<1000){
@@ -1536,9 +1536,26 @@
       </div>
       <div class="preloader__content">
         <div class="preloader__name h2">АЛЬМЕТЬЕВСК</div>
-        <div class="preloader__desc h3">МЕСТО РОЖДЕНИЯ месторождений</div>
+        <div class="preloader__desc">МЕСТО РОЖДЕНИЯ <span class="preloader__desc-slider"> <span class="_active">МЕСТОРОЖДЕНИЙ</span><span>КУЛЬТУРЫ</span><span>ИДЕЙ</span><span>спорта</span><span>Науки</span><span>инвистиций</span><span>ИДЕЙ		</span></span></div>
       </div>
       <div class="preloader__cities"><a class="preloader__city _top" href="#"><span>Актюба</span></a><a class="preloader__city _top _active" href="#"><span>Альметьевск</span></a><a class="preloader__city _top" href="#"><span>АзнакАЕво</span></a><a class="preloader__city _top" href="#"><span>Нижнекамск</span></a><a class="preloader__city" href="#"><span>Елабуга</span></a><a class="preloader__city" href="#"><span>Нурлат</span></a><a class="preloader__city" href="#"><span>Лениногорск</span></a><a class="preloader__city" href="#"><span>Джалиль</span></a><a class="preloader__city" href="#"><span>Бугульма</span></a><a class="preloader__city" href="#"><span>Бавлы</span></a></div>
+      <div class="preloader__bottom">
+        <div class="preloader__lb h4">Города, рожденные нефтью</div>
+        <div class="preloader__down">
+           <svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L9 8L17 1" stroke="#D0B787" stroke-width="2"/>
+</svg>
+        </div>
+        <div class="preloader__rb">
+           <svg width="26" height="29" viewBox="0 0 26 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M25 28V13" stroke="#D0B787" stroke-width="2" stroke-linecap="round"/>
+<path d="M19 28L19 1" stroke="#D0B787" stroke-width="2" stroke-linecap="round"/>
+<path d="M13 28L13 8" stroke="#D0B787" stroke-width="2" stroke-linecap="round"/>
+<path d="M7 28L7 4" stroke="#D0B787" stroke-width="2" stroke-linecap="round"/>
+<path d="M1 28L1 19" stroke="#D0B787" stroke-width="2" stroke-linecap="round"/>
+</svg>
+        </div>
+      </div>
     </div>
     <header class="header _header-hidden">
       <div class="inner"> 
@@ -1557,11 +1574,6 @@
               <button class="header__city" type="button"> альметьевск
               </button>
             </div>
-            <button class="header__search" type="button">
-               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M15 15L11.2409 11.2443M7 13C3.68629 13 1 10.3137 1 7C1 3.68629 3.68629 1 7 1C10.3137 1 13 3.68629 13 7C13 10.3137 10.3137 13 7 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-</svg>
-            </button>
             <button class="header__burger"> 
               <div class="header__burger-icon"><span></span><span></span><span></span></div><span class="header__burger-open">меню</span><span class="header__burger-close">закрыть</span>
             </button>
@@ -1624,11 +1636,6 @@
                 <button class="header__city" type="button"> альметьевск
                 </button>
               </div>
-              <button class="header__search" type="button">
-                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M15 15L11.2409 11.2443M7 13C3.68629 13 1 10.3137 1 7C1 3.68629 3.68629 1 7 1C10.3137 1 13 3.68629 13 7C13 10.3137 10.3137 13 7 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-</svg>
-              </button>
               <button class="header__burger"> 
                 <div class="header__burger-icon"><span></span><span></span><span></span></div><span class="header__burger-open">меню</span><span class="header__burger-close">закрыть</span>
               </button>
@@ -1767,7 +1774,7 @@
               </div>
             </div>
             <div class="another-news block">
-              <h2>ДРУГИЕ МЕРОПРИЯТИЯ</h2>
+              <h2>Фотоотчет</h2>
               <div class="gallery-popup" id="#front-gallery-popup" style="display:none">
                 <div class="gallery-popup__flex"> 
                   <div class="gallery-popup__overlay"></div>

@@ -64,7 +64,7 @@
         let preloader = document.querySelector(".preloader")
         
         if (isCityChange==false && getCookie("load")) {
-        	document.querySelector(".preloader").remove();
+        	document.querySelector(".preloader").style.display=none;
         } else {}
         	setTimeout(function(){let preloader = document.querySelector(".preloader")
         		if(window.innerWidth<1000){
@@ -1536,9 +1536,26 @@
       </div>
       <div class="preloader__content">
         <div class="preloader__name h2">АЛЬМЕТЬЕВСК</div>
-        <div class="preloader__desc h3">МЕСТО РОЖДЕНИЯ месторождений</div>
+        <div class="preloader__desc">МЕСТО РОЖДЕНИЯ <span class="preloader__desc-slider"> <span class="_active">МЕСТОРОЖДЕНИЙ</span><span>КУЛЬТУРЫ</span><span>ИДЕЙ</span><span>спорта</span><span>Науки</span><span>инвистиций</span><span>ИДЕЙ		</span></span></div>
       </div>
       <div class="preloader__cities"><a class="preloader__city _top" href="#"><span>Актюба</span></a><a class="preloader__city _top _active" href="#"><span>Альметьевск</span></a><a class="preloader__city _top" href="#"><span>АзнакАЕво</span></a><a class="preloader__city _top" href="#"><span>Нижнекамск</span></a><a class="preloader__city" href="#"><span>Елабуга</span></a><a class="preloader__city" href="#"><span>Нурлат</span></a><a class="preloader__city" href="#"><span>Лениногорск</span></a><a class="preloader__city" href="#"><span>Джалиль</span></a><a class="preloader__city" href="#"><span>Бугульма</span></a><a class="preloader__city" href="#"><span>Бавлы</span></a></div>
+      <div class="preloader__bottom">
+        <div class="preloader__lb h4">Города, рожденные нефтью</div>
+        <div class="preloader__down">
+           <svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L9 8L17 1" stroke="#D0B787" stroke-width="2"/>
+</svg>
+        </div>
+        <div class="preloader__rb">
+           <svg width="26" height="29" viewBox="0 0 26 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M25 28V13" stroke="#D0B787" stroke-width="2" stroke-linecap="round"/>
+<path d="M19 28L19 1" stroke="#D0B787" stroke-width="2" stroke-linecap="round"/>
+<path d="M13 28L13 8" stroke="#D0B787" stroke-width="2" stroke-linecap="round"/>
+<path d="M7 28L7 4" stroke="#D0B787" stroke-width="2" stroke-linecap="round"/>
+<path d="M1 28L1 19" stroke="#D0B787" stroke-width="2" stroke-linecap="round"/>
+</svg>
+        </div>
+      </div>
     </div>
     <header class="header _header-hidden">
       <div class="inner"> 
@@ -1557,11 +1574,6 @@
               <button class="header__city" type="button"> альметьевск
               </button>
             </div>
-            <button class="header__search" type="button">
-               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M15 15L11.2409 11.2443M7 13C3.68629 13 1 10.3137 1 7C1 3.68629 3.68629 1 7 1C10.3137 1 13 3.68629 13 7C13 10.3137 10.3137 13 7 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-</svg>
-            </button>
             <button class="header__burger"> 
               <div class="header__burger-icon"><span></span><span></span><span></span></div><span class="header__burger-open">меню</span><span class="header__burger-close">закрыть</span>
             </button>
@@ -1624,11 +1636,6 @@
                 <button class="header__city" type="button"> альметьевск
                 </button>
               </div>
-              <button class="header__search" type="button">
-                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M15 15L11.2409 11.2443M7 13C3.68629 13 1 10.3137 1 7C1 3.68629 3.68629 1 7 1C10.3137 1 13 3.68629 13 7C13 10.3137 10.3137 13 7 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-</svg>
-              </button>
               <button class="header__burger"> 
                 <div class="header__burger-icon"><span></span><span></span><span></span></div><span class="header__burger-open">меню</span><span class="header__burger-close">закрыть</span>
               </button>
@@ -1678,7 +1685,7 @@
           <div class="inner">
             <div data-scroll-section>
               <div class="front-top block">
-                <h1 class="front-top__title"> <span class="front-top__title-slider">&nbsp;<span class="_active">Ә</span><span>Ә</span><span>Ә</span></span>льметьевск</h1>
+                <h1 class="front-top__title"> <span class="front-top__title-slider">&nbsp;<span class="_active">Ә</span><span>А</span></span>льметьевск</h1>
                 <div class="front-top__subtitle"><span>МЕСТО </span><span>РОЖДЕНИЯ </span><span class="front-top__subtitle-slider">&nbsp;<span class="_active">МЕСТОРОЖДЕНИЙ</span><span>Науки</span><span>Экологии</span></span></div>
                 <div class="front-top__desc">
                   <p> 
@@ -1713,7 +1720,7 @@
                     </picture>
                   </div>
                 </div>
-                <div class="full-slider__content">
+                <div class="full-slider__content" data-aos="fade">
                   <div class="full-slider__autoplay"><svg width="26" height="26" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle opacity="0.3" r="11" cx="12" cy="12"  stroke="white" stroke-width="2"/>
 <circle class="full-slider__autoplay-circle" r="11" cx="12" cy="12"  stroke="white" stroke-width="2"/>
@@ -1824,7 +1831,7 @@
                       </picture>
                     </div>
                     <h3>Урбанистический комфорт</h3>
-                    <p>В Альметьевске реализована концепция<br>«15-ти минутного города из конца в конец». Всё рядом, всё близко, всё доступно</p>
+                    <p>В Альметьевске реализована концепция<br>«15-ти минутного города из конца в конец». Всё рядом, всё близко, всё доступно</p><a class="items-slider__link" href="#"></a>
                   </div>
                   <div class="swiper-slide" data-aos="fade" data-aos-delay="200">
                     <div class="items-slider__img _br"> 
@@ -1833,7 +1840,7 @@
                       </picture>
                     </div>
                     <h3>Велостолица России</h3>
-                    <p>113 км велодорожек. Велодорожки доступны к использованию круглый год. Велосипеды бронируются с телефона</p>
+                    <p>113 км велодорожек. Велодорожки доступны к использованию круглый год. Велосипеды бронируются с телефона</p><a class="items-slider__link" href="#"></a>
                   </div>
                   <div class="swiper-slide" data-aos="fade" data-aos-delay="400"> 
                     <div class="items-slider__img _br"> 
@@ -1842,7 +1849,7 @@
                       </picture>
                     </div>
                     <h3>Спортивный кластер</h3>
-                    <p>В городе развиваются 62 вида спорта, в т.ч. хоккей, футбол, триатлон, фигурное катание, йога. Построен скейт-парк и парк здоровья</p>
+                    <p>В городе развиваются 62 вида спорта, в т.ч. хоккей, футбол, триатлон, фигурное катание, йога. Построен скейт-парк и парк здоровья</p><a class="items-slider__link" href="#"></a>
                   </div>
                   <div class="swiper-slide" data-aos="fade" data-aos-delay="600">
                     <div class="items-slider__img _br"> 
@@ -1851,7 +1858,7 @@
                       </picture>
                     </div>
                     <h3>Образовательная инфраструктура</h3>
-                    <p>Для жителей открыты 89 муниципальных и частных детских садов, 64 государственные и частные школы, 3 вуза.</p>
+                    <p>Для жителей открыты 89 муниципальных и частных детских садов, 64 государственные и частные школы, 3 вуза.</p><a class="items-slider__link" href="#"></a>
                   </div>
                   <div class="swiper-slide" data-aos="fade" data-aos-delay="800">
                     <div class="items-slider__img _br"> 
@@ -1860,7 +1867,7 @@
                       </picture>
                     </div>
                     <h3>Урбанистический комфорт</h3>
-                    <p>В Альметьевске реализована концепция<br>«15-ти минутного города из конца в конец». Всё рядом, всё близко, всё доступно</p>
+                    <p>В Альметьевске реализована концепция<br>«15-ти минутного города из конца в конец». Всё рядом, всё близко, всё доступно</p><a class="items-slider__link" href="#"></a>
                   </div>
                   <div class="swiper-slide" data-aos="fade" data-aos-delay="1000">
                     <div class="items-slider__img _br"> 
@@ -1869,7 +1876,7 @@
                       </picture>
                     </div>
                     <h3>Велостолица России</h3>
-                    <p>113 км велодорожек. Велодорожки доступны к использованию круглый год. Велосипеды бронируются с телефона</p>
+                    <p>113 км велодорожек. Велодорожки доступны к использованию круглый год. Велосипеды бронируются с телефона</p><a class="items-slider__link" href="#"></a>
                   </div>
                   <div class="swiper-slide" data-aos="fade" data-aos-delay="1200">
                     <div class="items-slider__img _br"> 
@@ -1878,7 +1885,7 @@
                       </picture>
                     </div>
                     <h3>Спортивный кластер</h3>
-                    <p>В городе развиваются 62 вида спорта, в т.ч. хоккей, футбол, триатлон, фигурное катание, йога. Построен скейт-парк и парк здоровья</p>
+                    <p>В городе развиваются 62 вида спорта, в т.ч. хоккей, футбол, триатлон, фигурное катание, йога. Построен скейт-парк и парк здоровья</p><a class="items-slider__link" href="#"></a>
                   </div>
                   <div class="swiper-slide" data-aos="fade" data-aos-delay="1400">
                     <div class="items-slider__img _br"> 
@@ -1887,7 +1894,7 @@
                       </picture>
                     </div>
                     <h3>Образовательная инфраструктура</h3>
-                    <p>Для жителей открыты 89 муниципальных и частных детских садов, 64 государственные и частные школы, 3 вуза.</p>
+                    <p>Для жителей открыты 89 муниципальных и частных детских садов, 64 государственные и частные школы, 3 вуза.</p><a class="items-slider__link" href="#"></a>
                   </div>
                 </div>
                 <div class="items-slider__prev-zona">
@@ -2529,11 +2536,12 @@
               </div>
               <div class="btn-wrap _center"> <a class="btn-border" href="#">Больше о развитии</a></div>
             </div>
-            <div class="block front-persons">
+            <div class="block front-persons" data-interval="5">
               <div class="front-persons__head">
-                <h2>Альметьевск <br class="_only-mob">— место рождения
-                  <color>возможностей</color>
-                </h2>
+                <h2>Альметьевск <br class="_only-mob">— место рождения <span class="front-persons__title-list"> 
+                    <color class="_active">возможностей</color>
+                    <color>идей</color>
+                    <color>героев</color></span></h2>
                 <div class="front-persons__nav">
                   <button class="front-persons__prev" type="button"><svg   viewBox="0 0 30 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M10.6154 0.999999L2 9.5M2 9.5L10.6154 18M2 9.5L11.5 9.5L30 9.5" stroke="currentColor" stroke-width="2"/>
@@ -2547,116 +2555,346 @@
                   </button>
                 </div>
               </div>
-              <div class="front-persons__swiper swiper"> 
-                <div class="swiper-wrapper"> 
-                  <div class="swiper-slide front-persons__persona">
-                    <div class="front-persons__persona-img _br">
-                      <picture>
-                        <source type="image/webp" srcset="img/fp-1.webp"/><img alt="" src="img/fp-1.jpg"/>
-                      </picture>
+              <div class="front-persons__sliders">
+                <div class="front-persons__swiper swiper _active">
+                  <div class="swiper-wrapper"> 
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-1.webp"/><img alt="" src="img/fp-1.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3">Дина</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Организовала проект<br>«Кошкин дом»</p>
+                      </div>
                     </div>
-                    <div class="front-persons__persona-name h3">Дина</div>
-                    <div class="front-persons__persona-desc"> 
-                      <p>Организовала проект<br>«Кошкин дом»</p>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-2.webp"/><img alt="" src="img/fp-2.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3"> Рустам</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Создал пространство для&nbsp;Коворкинга</p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-3.webp"/><img alt="" src="img/fp-3.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3">Светлана</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Открыла салон женской красоты и&nbsp;эстетики</p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-4.webp"/><img alt="" src="img/fp-4.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3"> Данияр</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Стал инвестором по улучшению Городского парка им. 60-летия нефти Татарстана</p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-5.webp"/><img alt="" src="img/fp-5.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3">Светлана</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Открыла салон женской красоты и эстетики</p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-1.webp"/><img alt="" src="img/fp-1.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3">Дина</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Организовала проект<br>«Кошкин дом»</p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-2.webp"/><img alt="" src="img/fp-2.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3"> Рустам</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Создал пространство для&nbsp;Коворкинга</p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-3.webp"/><img alt="" src="img/fp-3.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3">Светлана</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Открыла салон женской красоты и&nbsp;эстетики</p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-4.webp"/><img alt="" src="img/fp-4.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3"> Данияр</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Стал инвестором по улучшению Городского парка им. 60-летия нефти Татарстана</p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-5.webp"/><img alt="" src="img/fp-5.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3">Светлана</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Открыла салон женской красоты и эстетики</p>
+                      </div>
                     </div>
                   </div>
-                  <div class="swiper-slide front-persons__persona">
-                    <div class="front-persons__persona-img _br">
-                      <picture>
-                        <source type="image/webp" srcset="img/fp-2.webp"/><img alt="" src="img/fp-2.jpg"/>
-                      </picture>
+                </div>
+                <div class="front-persons__swiper swiper"> 
+                  <div class="swiper-wrapper"> 
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-3.webp"/><img alt="" src="img/fp-3.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3">Светлана</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Открыла салон женской красоты и&nbsp;эстетики</p>
+                      </div>
                     </div>
-                    <div class="front-persons__persona-name h3"> Рустам</div>
-                    <div class="front-persons__persona-desc"> 
-                      <p>Создал пространство для&nbsp;Коворкинга</p>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-4.webp"/><img alt="" src="img/fp-4.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3"> Данияр</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Стал инвестором по улучшению Городского парка им. 60-летия нефти Татарстана</p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-5.webp"/><img alt="" src="img/fp-5.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3">Светлана</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Открыла салон женской красоты и эстетики</p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-1.webp"/><img alt="" src="img/fp-1.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3">Дина</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Организовала проект<br>«Кошкин дом»</p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-2.webp"/><img alt="" src="img/fp-2.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3"> Рустам</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Создал пространство для&nbsp;Коворкинга</p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-3.webp"/><img alt="" src="img/fp-3.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3">Светлана</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Открыла салон женской красоты и&nbsp;эстетики</p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-4.webp"/><img alt="" src="img/fp-4.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3"> Данияр</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Стал инвестором по улучшению Городского парка им. 60-летия нефти Татарстана</p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-5.webp"/><img alt="" src="img/fp-5.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3">Светлана</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Открыла салон женской красоты и эстетики</p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-1.webp"/><img alt="" src="img/fp-1.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3">Дина</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Организовала проект<br>«Кошкин дом»</p>
+                      </div>
+                    </div>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-2.webp"/><img alt="" src="img/fp-2.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3"> Рустам</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Создал пространство для&nbsp;Коворкинга</p>
+                      </div>
                     </div>
                   </div>
-                  <div class="swiper-slide front-persons__persona">
-                    <div class="front-persons__persona-img _br">
-                      <picture>
-                        <source type="image/webp" srcset="img/fp-3.webp"/><img alt="" src="img/fp-3.jpg"/>
-                      </picture>
+                </div>
+                <div class="front-persons__swiper swiper"> 
+                  <div class="swiper-wrapper"> 
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-5.webp"/><img alt="" src="img/fp-5.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3">Светлана</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Открыла салон женской красоты и эстетики</p>
+                      </div>
                     </div>
-                    <div class="front-persons__persona-name h3">Светлана</div>
-                    <div class="front-persons__persona-desc"> 
-                      <p>Открыла салон женской красоты и&nbsp;эстетики</p>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-1.webp"/><img alt="" src="img/fp-1.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3">Дина</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Организовала проект<br>«Кошкин дом»</p>
+                      </div>
                     </div>
-                  </div>
-                  <div class="swiper-slide front-persons__persona">
-                    <div class="front-persons__persona-img _br">
-                      <picture>
-                        <source type="image/webp" srcset="img/fp-4.webp"/><img alt="" src="img/fp-4.jpg"/>
-                      </picture>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-2.webp"/><img alt="" src="img/fp-2.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3"> Рустам</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Создал пространство для&nbsp;Коворкинга</p>
+                      </div>
                     </div>
-                    <div class="front-persons__persona-name h3"> Данияр</div>
-                    <div class="front-persons__persona-desc"> 
-                      <p>Стал инвестором по улучшению Городского парка им. 60-летия нефти Татарстана</p>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-3.webp"/><img alt="" src="img/fp-3.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3">Светлана</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Открыла салон женской красоты и&nbsp;эстетики</p>
+                      </div>
                     </div>
-                  </div>
-                  <div class="swiper-slide front-persons__persona">
-                    <div class="front-persons__persona-img _br">
-                      <picture>
-                        <source type="image/webp" srcset="img/fp-5.webp"/><img alt="" src="img/fp-5.jpg"/>
-                      </picture>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-4.webp"/><img alt="" src="img/fp-4.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3"> Данияр</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Стал инвестором по улучшению Городского парка им. 60-летия нефти Татарстана</p>
+                      </div>
                     </div>
-                    <div class="front-persons__persona-name h3">Светлана</div>
-                    <div class="front-persons__persona-desc"> 
-                      <p>Открыла салон женской красоты и эстетики</p>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-5.webp"/><img alt="" src="img/fp-5.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3">Светлана</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Открыла салон женской красоты и эстетики</p>
+                      </div>
                     </div>
-                  </div>
-                  <div class="swiper-slide front-persons__persona">
-                    <div class="front-persons__persona-img _br">
-                      <picture>
-                        <source type="image/webp" srcset="img/fp-1.webp"/><img alt="" src="img/fp-1.jpg"/>
-                      </picture>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-1.webp"/><img alt="" src="img/fp-1.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3">Дина</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Организовала проект<br>«Кошкин дом»</p>
+                      </div>
                     </div>
-                    <div class="front-persons__persona-name h3">Дина</div>
-                    <div class="front-persons__persona-desc"> 
-                      <p>Организовала проект<br>«Кошкин дом»</p>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-2.webp"/><img alt="" src="img/fp-2.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3"> Рустам</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Создал пространство для&nbsp;Коворкинга</p>
+                      </div>
                     </div>
-                  </div>
-                  <div class="swiper-slide front-persons__persona">
-                    <div class="front-persons__persona-img _br">
-                      <picture>
-                        <source type="image/webp" srcset="img/fp-2.webp"/><img alt="" src="img/fp-2.jpg"/>
-                      </picture>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-3.webp"/><img alt="" src="img/fp-3.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3">Светлана</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Открыла салон женской красоты и&nbsp;эстетики</p>
+                      </div>
                     </div>
-                    <div class="front-persons__persona-name h3"> Рустам</div>
-                    <div class="front-persons__persona-desc"> 
-                      <p>Создал пространство для&nbsp;Коворкинга</p>
-                    </div>
-                  </div>
-                  <div class="swiper-slide front-persons__persona">
-                    <div class="front-persons__persona-img _br">
-                      <picture>
-                        <source type="image/webp" srcset="img/fp-3.webp"/><img alt="" src="img/fp-3.jpg"/>
-                      </picture>
-                    </div>
-                    <div class="front-persons__persona-name h3">Светлана</div>
-                    <div class="front-persons__persona-desc"> 
-                      <p>Открыла салон женской красоты и&nbsp;эстетики</p>
-                    </div>
-                  </div>
-                  <div class="swiper-slide front-persons__persona">
-                    <div class="front-persons__persona-img _br">
-                      <picture>
-                        <source type="image/webp" srcset="img/fp-4.webp"/><img alt="" src="img/fp-4.jpg"/>
-                      </picture>
-                    </div>
-                    <div class="front-persons__persona-name h3"> Данияр</div>
-                    <div class="front-persons__persona-desc"> 
-                      <p>Стал инвестором по улучшению Городского парка им. 60-летия нефти Татарстана</p>
-                    </div>
-                  </div>
-                  <div class="swiper-slide front-persons__persona">
-                    <div class="front-persons__persona-img _br">
-                      <picture>
-                        <source type="image/webp" srcset="img/fp-5.webp"/><img alt="" src="img/fp-5.jpg"/>
-                      </picture>
-                    </div>
-                    <div class="front-persons__persona-name h3">Светлана</div>
-                    <div class="front-persons__persona-desc"> 
-                      <p>Открыла салон женской красоты и эстетики</p>
+                    <div class="swiper-slide front-persons__persona">
+                      <div class="front-persons__persona-img _br">
+                        <picture>
+                          <source type="image/webp" srcset="img/fp-4.webp"/><img alt="" src="img/fp-4.jpg"/>
+                        </picture>
+                      </div>
+                      <div class="front-persons__persona-name h3"> Данияр</div>
+                      <div class="front-persons__persona-desc"> 
+                        <p>Стал инвестором по улучшению Городского парка им. 60-летия нефти Татарстана</p>
+                      </div>
                     </div>
                   </div>
                 </div>

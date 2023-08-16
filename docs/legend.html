@@ -64,7 +64,7 @@
         let preloader = document.querySelector(".preloader")
         
         if (isCityChange==false && getCookie("load")) {
-        	document.querySelector(".preloader").remove();
+        	document.querySelector(".preloader").style.display=none;
         } else {}
         	setTimeout(function(){let preloader = document.querySelector(".preloader")
         		if(window.innerWidth<1000){
@@ -1536,9 +1536,26 @@
       </div>
       <div class="preloader__content">
         <div class="preloader__name h2">АЛЬМЕТЬЕВСК</div>
-        <div class="preloader__desc h3">МЕСТО РОЖДЕНИЯ месторождений</div>
+        <div class="preloader__desc">МЕСТО РОЖДЕНИЯ <span class="preloader__desc-slider"> <span class="_active">МЕСТОРОЖДЕНИЙ</span><span>КУЛЬТУРЫ</span><span>ИДЕЙ</span><span>спорта</span><span>Науки</span><span>инвистиций</span><span>ИДЕЙ		</span></span></div>
       </div>
       <div class="preloader__cities"><a class="preloader__city _top" href="#"><span>Актюба</span></a><a class="preloader__city _top _active" href="#"><span>Альметьевск</span></a><a class="preloader__city _top" href="#"><span>АзнакАЕво</span></a><a class="preloader__city _top" href="#"><span>Нижнекамск</span></a><a class="preloader__city" href="#"><span>Елабуга</span></a><a class="preloader__city" href="#"><span>Нурлат</span></a><a class="preloader__city" href="#"><span>Лениногорск</span></a><a class="preloader__city" href="#"><span>Джалиль</span></a><a class="preloader__city" href="#"><span>Бугульма</span></a><a class="preloader__city" href="#"><span>Бавлы</span></a></div>
+      <div class="preloader__bottom">
+        <div class="preloader__lb h4">Города, рожденные нефтью</div>
+        <div class="preloader__down">
+           <svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 1L9 8L17 1" stroke="#D0B787" stroke-width="2"/>
+</svg>
+        </div>
+        <div class="preloader__rb">
+           <svg width="26" height="29" viewBox="0 0 26 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M25 28V13" stroke="#D0B787" stroke-width="2" stroke-linecap="round"/>
+<path d="M19 28L19 1" stroke="#D0B787" stroke-width="2" stroke-linecap="round"/>
+<path d="M13 28L13 8" stroke="#D0B787" stroke-width="2" stroke-linecap="round"/>
+<path d="M7 28L7 4" stroke="#D0B787" stroke-width="2" stroke-linecap="round"/>
+<path d="M1 28L1 19" stroke="#D0B787" stroke-width="2" stroke-linecap="round"/>
+</svg>
+        </div>
+      </div>
     </div>
     <header class="header _header-hidden">
       <div class="inner"> 
@@ -1557,11 +1574,6 @@
               <button class="header__city" type="button"> альметьевск
               </button>
             </div>
-            <button class="header__search" type="button">
-               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M15 15L11.2409 11.2443M7 13C3.68629 13 1 10.3137 1 7C1 3.68629 3.68629 1 7 1C10.3137 1 13 3.68629 13 7C13 10.3137 10.3137 13 7 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-</svg>
-            </button>
             <button class="header__burger"> 
               <div class="header__burger-icon"><span></span><span></span><span></span></div><span class="header__burger-open">меню</span><span class="header__burger-close">закрыть</span>
             </button>
@@ -1624,11 +1636,6 @@
                 <button class="header__city" type="button"> альметьевск
                 </button>
               </div>
-              <button class="header__search" type="button">
-                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M15 15L11.2409 11.2443M7 13C3.68629 13 1 10.3137 1 7C1 3.68629 3.68629 1 7 1C10.3137 1 13 3.68629 13 7C13 10.3137 10.3137 13 7 13Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-</svg>
-              </button>
               <button class="header__burger"> 
                 <div class="header__burger-icon"><span></span><span></span><span></span></div><span class="header__burger-open">меню</span><span class="header__burger-close">закрыть</span>
               </button>
@@ -1734,7 +1741,7 @@
               <div data-aos="fade-right">
                 <div class="legend-1__year"> В 1740 году</div>
               </div>
-              <div class="legend-1__row"> 
+              <div class="legend-1__row" data-aos="fade">
                 <div class="legend-1__left"> 
                   <div data-aos="fade"> 
                     <p> 
@@ -1743,19 +1750,19 @@
                     <p>мулла Альмухаммат, прямой потомок булгарского хана Бикчуры, основал здесь Альметьево. Богатые природными ресурсами территории поймы реки Зай привлекли первых энтузиастов возможностью осваивать земли, заниматься сельским хозяйством и добывать медную руду. </p>
                   </div>
                   <div class="legend-1__row2"> 
-                    <div class="legend-1__img" data-aos="fade-up">
+                    <div class="legend-1__img">
                       <picture>
                         <source type="image/webp" srcset="img/legend-2.webp"/><img class="_br" alt="" src="img/legend-2.jpg"/>
                       </picture>
                     </div>
-                    <div class="legend-1__img-2" data-aos="fade-up" data-aos-delay="300">
+                    <div class="legend-1__img-2">
                       <picture>
                         <source type="image/webp" srcset="img/legend-3.webp"/><img class="_br" alt="" src="img/legend-3.jpg"/>
                       </picture>
                     </div>
                   </div>
                 </div>
-                <div data-aos="fade">
+                <div>
                   <div class="one-img-slider swiper _br">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide"> 
@@ -1827,33 +1834,53 @@
               <div data-aos="fade-right">
                 <div class="legend-3__year"> В 1948 году</div>
               </div>
-              <div class="textk" data-aos="fade"> 
+              <div class="text" data-aos="fade"> 
                 <p>
                   <color>на юго-востоке Татарстана бригада нефтяников обнаружила одно из крупнейших месторождений в мире — Ромашкинское. <br>С тех пор потомственные  бурильщики, инженеры и ученые трансформируют месторождение нефти в места рождения новых предприятий, нового бизнеса, прорывных идей и инженерных решений.  </color>
                 </p>
                 <p>Альметьевцы других профессий параллельно развивают новые месторождения творчества, воображения, заботы, объятий и эмоций. По примеру своих отцов жители города вместе улучшают Альметьевск и его инфраструктуру, чтобы создать все условия для комфортной жизни нынешнего  и последующих поколений.</p>
               </div>
-              <div class="one-img-slider swiper _br" data-aos="fade"> 
+              <div class="one-img-slider swiper" data-aos="fade"> 
                 <div class="swiper-wrapper">
                   <div class="swiper-slide"> 
-                    <picture>
-                      <source type="image/webp" srcset="img/legend-5.webp"/><img alt="" src="img/legend-5.jpg"/>
-                    </picture>
+                    <div class="one-img-slider__img _br"> 
+                      <picture>
+                        <source type="image/webp" srcset="img/legend-5.webp"/><img alt="" src="img/legend-5.jpg"/>
+                      </picture>
+                    </div>
+                    <div class="one-img-slider__desc">
+                      <p>Ромашкинское месторождение нефти, 1948 год</p>
+                    </div>
                   </div>
                   <div class="swiper-slide"> 
-                    <picture>
-                      <source type="image/webp" srcset="img/legend-4.webp"/><img alt="" src="img/legend-4.jpg"/>
-                    </picture>
+                    <div class="one-img-slider__img _br"> 
+                      <picture>
+                        <source type="image/webp" srcset="img/legend-4.webp"/><img alt="" src="img/legend-4.jpg"/>
+                      </picture>
+                    </div>
+                    <div class="one-img-slider__desc">
+                      <p>Ромашкинское месторождение нефти, 1948 год</p>
+                    </div>
                   </div>
                   <div class="swiper-slide"> 
-                    <picture>
-                      <source type="image/webp" srcset="img/legend-5.webp"/><img alt="" src="img/legend-5.jpg"/>
-                    </picture>
+                    <div class="one-img-slider__img _br"> 
+                      <picture>
+                        <source type="image/webp" srcset="img/legend-5.webp"/><img alt="" src="img/legend-5.jpg"/>
+                      </picture>
+                    </div>
+                    <div class="one-img-slider__desc">
+                      <p>Ромашкинское месторождение нефти, 1948 год</p>
+                    </div>
                   </div>
                   <div class="swiper-slide"> 
-                    <picture>
-                      <source type="image/webp" srcset="img/legend-4.webp"/><img alt="" src="img/legend-4.jpg"/>
-                    </picture>
+                    <div class="one-img-slider__img _br"> 
+                      <picture>
+                        <source type="image/webp" srcset="img/legend-4.webp"/><img alt="" src="img/legend-4.jpg"/>
+                      </picture>
+                    </div>
+                    <div class="one-img-slider__desc">
+                      <p>Ромашкинское месторождение нефти, 1948 год</p>
+                    </div>
                   </div>
                 </div>
                 <div class="one-img-slider__footer"> 
