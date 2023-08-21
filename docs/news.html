@@ -64,7 +64,7 @@
         let preloader = document.querySelector(".preloader")
         
         if (isCityChange==false && getCookie("load")) {
-        	document.querySelector(".preloader").style.display=none;
+        	document.querySelector(".preloader").style.display='none';
         } else {}
         	setTimeout(function(){let preloader = document.querySelector(".preloader")
         		if(window.innerWidth<1000){
@@ -1739,6 +1739,7 @@
               </label>
             </div>
             <div class="news-main block">
+              <script>let state =  {"city":"АзнакАЕво","page":2,"pages":6,"sort":"time"}</script>
               <div class="news-main__page">
                 <div id="template" style="display:none">
                   <div class="news-preview">
@@ -1751,6 +1752,17 @@
                       <div class="news-preview__head-row"> 
                         <div class="news-preview__tags"></div><span class="news-preview__date"></span><span class="_divider"></span><span class="news-preview__time"></span>
                       </div><a class="news-preview__title h3" htef="#"></a>
+                    </div>
+                  </div>
+                  <div class="news-events _br">
+                    <div class="news-events__img"> 
+                      <picture>
+                        <source type="image/webp" srcset="img/.webp"/><img alt="" src="img/.jpg"/>
+                      </picture>
+                    </div>
+                    <div class="news-events__content">
+                      <div class="news-events__title h3"></div>
+                      <div class="news-events__time"></div><a class="news-events__link" href="#">Купить билет</a>
                     </div>
                   </div>
                   <div class="news-none"> 
