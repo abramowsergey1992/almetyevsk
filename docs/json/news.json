@@ -1,13 +1,13 @@
 {
 	"pages": {
-		"now": 5,
-		"length": 5
+		"now": 1,
+		"length": 1
 	},
 	"items": [
 		{
 			"type": "news",
 			"class": "_col-span-3",
-			"link": "/",
+			"link": "/22222",
 			"img": "img/a-1.jpg",
 			"date": "9 марта 2023",
 			"time": "10:45",
@@ -17,7 +17,7 @@
 		{
 			"type": "news",
 			"class": "",
-			"link": "/",
+			"link": "/22222",
 			"img": "img/a-2.jpg",
 			"date": "3 марта 2023",
 			"time": "10:45",
