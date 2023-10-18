@@ -24,58 +24,59 @@
       
     </script>
     <div class="preloader" id="preloader">
-      <script>
-        function getCookie(e, t = !1) {
-        	if (!e) return;
-        	let n = document.cookie.match(
-        		new RegExp(
-        			"(?:^|; )" +
-        			e.replace(/([.$?*|{}()\[\]\\\/+^])/g, "\\$1") +
-        			"=([^;]*)"
-        		)
-        	);
-        	if (n) {
-        		let e = decodeURIComponent(n[1]);
-        		if (t)
-        			try {
-        				return JSON.parse(e);
-        			} catch (e) {}
-        		return e;
-        	}
-        }
-        function setCookie(e, t, n = { path: "/" }) {
-        	if (!e) return;
-        	(n = n || {}).expires instanceof Date &&
-        	(n.expires = n.expires.toUTCString()),
-        	t instanceof Object && (t = JSON.stringify(t));
-        	let o = encodeURIComponent(e) + "=" + encodeURIComponent(t);
-        	for (let e in n) {
-        		o += "; " + e;
-        		let t = n[e];
-        		!0 !== t && (o += "=" + t);
-        	}
-        	document.cookie = o;
-        }
-        function deleteCookie(e) {
-        	setCookie(e, null, { expires: new Date(), path: "/" });
-        }
-        
-        
-        let preloader = document.querySelector(".preloader")
-        
-        if (isCityChange==false && getCookie("load")) {
-        	document.querySelector(".preloader").style.display='none';
-        } else {}
-        	setTimeout(function(){let preloader = document.querySelector(".preloader")
-        		if(window.innerWidth<1000){
-        	preloader.scrollLeft= 500 - window.innerWidth/2;
-        }
-        },100)
-      </script><svg class="preloader__scroll-icon " width="26" height="30" viewBox="0 0 26 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div class="preloader__scroll">
+        <script>
+          function getCookie(e, t = !1) {
+          	if (!e) return;
+          	let n = document.cookie.match(
+          		new RegExp(
+          			"(?:^|; )" +
+          			e.replace(/([.$?*|{}()\[\]\\\/+^])/g, "\\$1") +
+          			"=([^;]*)"
+          		)
+          	);
+          	if (n) {
+          		let e = decodeURIComponent(n[1]);
+          		if (t)
+          			try {
+          				return JSON.parse(e);
+          			} catch (e) {}
+          		return e;
+          	}
+          }
+          function setCookie(e, t, n = { path: "/" }) {
+          	if (!e) return;
+          	(n = n || {}).expires instanceof Date &&
+          	(n.expires = n.expires.toUTCString()),
+          	t instanceof Object && (t = JSON.stringify(t));
+          	let o = encodeURIComponent(e) + "=" + encodeURIComponent(t);
+          	for (let e in n) {
+          		o += "; " + e;
+          		let t = n[e];
+          		!0 !== t && (o += "=" + t);
+          	}
+          	document.cookie = o;
+          }
+          function deleteCookie(e) {
+          	setCookie(e, null, { expires: new Date(), path: "/" });
+          }
+          
+          
+          let preloader = document.querySelector(".preloader")
+          
+          if (isCityChange==false && getCookie("load")) {
+          	document.querySelector(".preloader").style.display='none';
+          } else {}
+          	setTimeout(function(){let preloader = document.querySelector(".preloader")
+          		if(window.innerWidth<1000){
+          	preloader.scrollLeft= 500 - window.innerWidth/2;
+          }
+          },100)
+        </script><svg class="preloader__scroll-icon " width="26" height="30" viewBox="0 0 26 30" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M9 20V17M9 17V7C9 5.89543 9.89543 5 11 5C12.1046 5 13 5.89543 13 7V15H19.7059C21.5252 15 23 16.4748 23 18.2941V20C23 24.9706 18.9706 29 14 29H13C8.58172 29 5 25.4183 5 21C5 18.7909 6.79086 17 9 17ZM16 11H20C22.7614 11 25 8.76142 25 6C25 3.23858 22.7614 1 20 1H6C3.23858 1 1 3.23858 1 6C1 8.76142 3.23858 11 6 11" stroke="white"/>
 </svg>
-      <div class="preloader__flex"> </div>
-      <div class="preloader__circles"><svg  class="preloader__circle _it-1" width="262" height="261" viewBox="0 0 262 261" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="preloader__flex"> </div>
+        <div class="preloader__circles"><svg  class="preloader__circle _it-1" width="262" height="261" viewBox="0 0 262 261" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M235.549 206.188C237.586 206.188 239.237 204.537 239.237 202.5C239.237 200.463 237.586 198.812 235.549 198.812C233.513 198.812 231.862 200.463 231.862 202.5C231.862 204.537 233.513 206.188 235.549 206.188Z" fill="#212121"/>
 <path d="M244.555 186.845C245.201 186.845 245.726 186.321 245.726 185.674C245.726 185.027 245.201 184.503 244.555 184.503C243.908 184.503 243.383 185.027 243.383 185.674C243.383 186.321 243.908 186.845 244.555 186.845Z" fill="#212121"/>
 <path d="M253.307 169.418C253.674 169.418 253.971 169.12 253.971 168.753C253.971 168.386 253.674 168.088 253.307 168.088C252.94 168.088 252.642 168.386 252.642 168.753C252.642 169.12 252.94 169.418 253.307 169.418Z" fill="#212121"/>
@@ -1528,33 +1529,34 @@
 <path d="M1783.51 2050.41C1790.7 2050.41 1796.53 2044.57 1796.53 2037.38C1796.53 2030.19 1790.7 2024.35 1783.51 2024.35C1776.31 2024.35 1770.48 2030.19 1770.48 2037.38C1770.48 2044.57 1776.31 2050.41 1783.51 2050.41Z" fill="#212121"/>
 <path d="M1852.92 1995.01C1857.72 1995.01 1861.61 1991.12 1861.61 1986.32C1861.61 1981.52 1857.72 1977.63 1852.92 1977.63C1848.12 1977.63 1844.23 1981.52 1844.23 1986.32C1844.23 1991.12 1848.12 1995.01 1852.92 1995.01Z" fill="#212121"/>
 </svg>
-      </div>
-      <div class="preloader__logo"> <svg width="171" height="171" viewBox="0 0 171 171" fill="none" xmlns="http://www.w3.org/2000/svg">
+        </div>
+        <div class="preloader__logo"> <svg width="171" height="171" viewBox="0 0 171 171" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M133.571 64.4384C123.977 47.9852 106.039 36.9113 85.5 36.9113C82.5403 36.9113 79.6401 37.1478 76.7996 37.5813L62.1002 23L41.5211 58.3695L57.9288 74.6453C63.7092 65.601 73.8994 59.5911 85.5 59.5911C99.8815 59.5911 112.078 68.8128 116.428 81.6207H30.9733C30.3377 84.9704 30 88.4187 30 91.9458C30 122.35 54.8499 147 85.5 147C98.2527 147 109.992 142.744 119.368 135.571L128.327 144.458H141V101.739C141 86.6847 140.364 76.064 133.571 64.4187V64.4384ZM85.5 124.32C71.1185 124.32 58.922 115.099 54.5718 102.291H116.408C112.058 115.099 99.8617 124.32 85.4801 124.32H85.5Z" fill="#D0B787"/>
 </svg>
-      </div>
-      <div class="preloader__content">
-        <div class="preloader__name h2"> АЛЬМЕТЬЕВСК
         </div>
-        <div class="preloader__desc">МЕСТО РОЖДЕНИЯ <span class="preloader__desc-slider"> <span class="_active">МЕСТОРОЖДЕНИЙ</span><span>перспектив</span><span>культуры</span><span>науки</span><span>спорта</span><span>возможностей</span><span>инвестиций</span></span>
+        <div class="preloader__content">
+          <div class="preloader__name h2"> АЛЬМЕТЬЕВСК
+          </div>
+          <div class="preloader__desc">МЕСТО РОЖДЕНИЯ <span class="preloader__desc-slider"> <span class="_active">МЕСТОРОЖДЕНИЙ</span><span>перспектив</span><span>культуры</span><span>науки</span><span>спорта</span><span>возможностей</span><span>инвестиций</span></span>
+          </div>
         </div>
-      </div>
-      <div class="preloader__cities"><a class="preloader__city _top" href="#"><span>Актюба</span></a><a class="preloader__city _top _active" href="#"><span>Альметьевск</span></a><a class="preloader__city _top" href="#"><span>АзнакАЕво</span></a><a class="preloader__city _top" href="#"><span>Нижнекамск</span></a><a class="preloader__city" href="#"><span>Елабуга</span></a><a class="preloader__city" href="#"><span>Нурлат</span></a><a class="preloader__city" href="#"><span>Лениногорск</span></a><a class="preloader__city" href="#"><span>Джалиль</span></a><a class="preloader__city" href="#"><span>Бугульма</span></a><a class="preloader__city" href="#"><span>Бавлы</span></a></div>
-      <div class="preloader__bottom">
-        <div class="preloader__lb h4">Города, рожденные нефтью</div>
-        <div class="preloader__down">
-           <svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="preloader__cities"><a class="preloader__city _top" href="#"><span>Актюба</span></a><a class="preloader__city _top _active" href="#"><span>Альметьевск</span></a><a class="preloader__city _top" href="#"><span>АзнакАЕво</span></a><a class="preloader__city _top" href="#"><span>Нижнекамск</span></a><a class="preloader__city" href="#"><span>Елабуга</span></a><a class="preloader__city" href="#"><span>Нурлат</span></a><a class="preloader__city" href="#"><span>Лениногорск</span></a><a class="preloader__city" href="#"><span>Джалиль</span></a><a class="preloader__city" href="#"><span>Бугульма</span></a><a class="preloader__city" href="#"><span>Бавлы</span></a></div>
+        <div class="preloader__bottom">
+          <div class="preloader__lb h4">Города, рожденные нефтью</div>
+          <div class="preloader__down">
+             <svg width="18" height="10" viewBox="0 0 18 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M1 1L9 8L17 1" stroke="#D0B787" stroke-width="2"/>
 </svg>
-        </div>
-        <div class="preloader__rb">
-           <svg width="26" height="29" viewBox="0 0 26 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+          </div>
+          <div class="preloader__rb">
+             <svg width="26" height="29" viewBox="0 0 26 29" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M25 28V13" stroke="#D0B787" stroke-width="2" stroke-linecap="round"/>
 <path d="M19 28L19 1" stroke="#D0B787" stroke-width="2" stroke-linecap="round"/>
 <path d="M13 28L13 8" stroke="#D0B787" stroke-width="2" stroke-linecap="round"/>
 <path d="M7 28L7 4" stroke="#D0B787" stroke-width="2" stroke-linecap="round"/>
 <path d="M1 28L1 19" stroke="#D0B787" stroke-width="2" stroke-linecap="round"/>
 </svg>
+          </div>
         </div>
       </div>
     </div>
