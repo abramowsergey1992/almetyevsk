@@ -2876,7 +2876,6 @@ $(function () {
 	}
 });
 
-$(function(){})
 $(function () {
 	if ($("#news-grid").length) {
 		function renderNews() {
@@ -3092,6 +3091,7 @@ $(function () {
 	}
 });
 
+$(function(){})
 $(function () {
 	AOS.init({
 		duration: 700, // values from 0 to 3000, with step 50ms
@@ -3322,266 +3322,6 @@ $(function () {
 $(function(){})
 $(function(){})
 $(function () {
-	$(".popup-slider__swiper").each(function () {
-		const swiper = new Swiper(this, {
-			speed: 400,
-			setWrapperSize: true,
-			observeParents: true,
-			observer: true,
-			spaceBetween: 50,
-		});
-	});
-	$(".popup-slider__overlay, .popup-slider__close").click(function () {
-		$(".popup-slider").fadeOut();
-		$("body").removeClass("_no-scroll");
-	});
-	$("[data-popupslider]").click(function () {
-		let id = $(this).data("popupslider").split("|")[0];
-		let slide = $(this).data("popupslider").split("|")[1];
-		if ($(id).length) {
-			$("body").addClass("_no-scroll");
-			$(id).fadeIn();
-
-			$(id).find(".popup-slider__swiper")[0].swiper.slideTo(slide);
-		}
-	});
-	$("[data-popup]").click(function () {
-		let id = $(this).data("popup");
-		if ($(id).length) {
-			$("body").addClass("_no-scroll");
-			$(id).fadeIn();
-		}
-	});
-
-	$(".popup__overlay, .popup__close").click(function () {
-		$(".popup").fadeOut();
-		$("body").removeClass("_no-scroll");
-	});
-	$(".filters-popup__overlay, .filters-popup__close").click(function () {
-		$(".filters-popup").fadeOut();
-		$("body").removeClass("_no-scroll");
-	});
-});
-
-$(function () {
-	let isCityChange = true;
-	$("body").addClass("_preloader-open");
-	function preloaderOut() {
-		$(".preloader").addClass("_fadeup");
-		setTimeout(function () {
-			$(".preloader").fadeOut();
-
-			setTimeout(function () {
-				$("body").removeClass("_preloader-open");
-			}, 500);
-		}, 1000);
-	}
-
-	if ($(".preloader__desc").length) {
-		let indx = 0;
-		function titleSliderResize() {
-			let w = 0;
-			$(".preloader__desc-slider  span").each(function () {
-				w = w < $(this).width() ? $(this).width() : w;
-				console.log($(this).width(), w);
-			});
-			$(".preloader__desc-slider ").css("min-width", w);
-			$(".preloader__desc-slider ").css(
-				"min-width",
-				$(".preloader__desc-slider  span").first().width()
-			);
-		}
-		titleSliderResize();
-		window.addEventListener(
-			"resize",
-			function (event) {
-				titleSliderResize();
-			},
-			true
-		);
-		setInterval(function () {
-			let lng = $(".preloader__desc-slider   span").length - 1;
-			$(".preloader__desc-slider   span").removeClass("_prev");
-			$(".preloader__desc-slider  span._active").addClass("_prev");
-			$(".preloader__desc-slider   span").removeClass("_active");
-			indx = indx == lng ? 0 : indx + 1;
-
-			$(".preloader__desc-slider   span").eq(indx).addClass("_active");
-		}, 2000);
-	}
-	$(".preloader").addClass("_load");
-	var $svg = $(".preloader__logo svg").drawsvg({
-		duration: 3000,
-	});
-	$svg.drawsvg("animate");
-
-	$(".header__city").click(function () {
-		$(".preloader").scrollLeft((1300 - window.innerWidth) / 2);
-
-		$(".preloader").removeClass(
-			" _load _circles-animate _content _city _fadeup"
-		);
-		$(".preloader").fadeIn(function () {
-			$(".preloader").addClass("_load");
-		});
-		$("body").addClass("_preloader-open");
-		setTimeout(function () {
-			$(".preloader").addClass("_circles-animate");
-			let delay = 0;
-
-			// $(".preloader__circle").each(function () {
-			// 	gsap.to(this, {
-			// 		rotation: 0,
-			// 		delay: delay,
-			// 		duration: 10,
-			// 		ease: "elastic",
-			// 	});
-			// 	delay += 0.2;
-			// });
-			// if (isCityChange) {
-			setTimeout(function () {
-				$(".preloader").addClass("_content");
-			}, 1500);
-
-			setTimeout(function () {
-				$(".preloader").addClass("_city");
-			}, 3000);
-
-			setTimeout(function () {
-				$(".header").addClass("_opacity");
-			}, 3500);
-			// } else {
-			// 	setTimeout(function () {
-			// 		preloaderOut();
-			// 	}, 1000);
-			// }
-
-			setTimeout(function () {
-				$(".preloader__circle").attr("style", "");
-			}, 4000);
-		}, 500);
-	});
-	setTimeout(function () {
-		$(".preloader").addClass("_circles-animate");
-		let delay = 0;
-
-		$(".preloader").scrollLeft((1300 - window.innerWidth) / 2);
-		$(".preloader__circle").each(function () {
-			gsap.to(this, {
-				rotation: 0,
-				delay: delay,
-				duration: 10,
-				ease: "elastic",
-			});
-			delay += 0.2;
-		});
-		if (isCityChange) {
-			setTimeout(function () {
-				$(".preloader").addClass("_content");
-			}, 1500);
-
-			setTimeout(function () {
-				$(".preloader").addClass("_city");
-			}, 3000);
-
-			setTimeout(function () {
-				$(".header").addClass("_opacity");
-			}, 3500);
-			if ($("#city-change-page").length == 0) {
-				$(".preloader").on("mousewheel", function (e) {
-					if (e.originalEvent.wheelDelta / 120 > 0) {
-						console.log("up");
-					} else {
-						preloaderOut();
-					}
-				});
-				$(".preloader").on("DOMMouseScroll", function (e) {
-					if (e.originalEvent.wheelDelta / 120 > 0) {
-						console.log("up");
-					} else {
-						preloaderOut();
-					}
-				});
-
-				$(".preloader").swipe({
-					preventDefaultEvents: false,
-					//Generic swipe handler for all directions
-					swipe: function (
-						event,
-						direction,
-						distance,
-						duration,
-						fingerCount,
-						fingerData
-					) {
-						if (distance >= 50) {
-							if (direction == "up") {
-								preloaderOut();
-							}
-						}
-					},
-				});
-			}
-		} else {
-			setTimeout(function () {
-				preloaderOut();
-			}, 1000);
-		}
-		$(".preloader__down").click(function () {
-			preloaderOut();
-		});
-		setTimeout(function () {
-			$(".preloader__circle").css({
-				opacity: 1,
-				animation: "none",
-			});
-			$(document).mousemove(function (event) {
-				let p = 1 / (window.innerWidth / event.pageX) - 0.5;
-				let i = 0;
-
-				$(".preloader__circle").each(function () {
-					gsap.to(this, {
-						rotation: (4 + i) * p,
-						duration: 4,
-						ease: "elastic",
-					});
-					i += 1;
-				});
-				$(".preloader__cities").each(function () {
-					let i = $(this).data("id") - 1;
-					gsap.to(this, {
-						rotation: (4 + i) * p,
-						duration: 4,
-						ease: "elastic",
-					});
-					$(this)
-						.find("span")
-						.each(function () {
-							gsap.to(this, {
-								rotation: -1 * (4 + i) * p,
-								duration: 4,
-								ease: "elastic",
-							});
-						});
-				});
-			});
-		}, 4000);
-	}, 500);
-});
-
-$(function () {
-	$(".words").each(function () {
-		let th = $(this);
-		var words = th.text().split(" ");
-		th.empty();
-		$.each(words, function (i, v) {
-			th.append($("<span>").text(v));
-			th.append(" ");
-		});
-	});
-});
-
-$(function () {
 	if ($(".overfolow-x").length) {
 		$(".overfolow-x").each(function () {
 			let $th = $(this);
@@ -3667,4 +3407,291 @@ $(function () {
 				});
 		});
 	}
+});
+
+$(function () {
+	let isCityChange = true;
+	$("body").addClass("_preloader-open");
+	if ($(".preloader").length) {
+		$(window).scroll(function () {
+			if ($(this).scrollTop() == 0) {
+				preloaderIn();
+			}
+		});
+	}
+	function preloaderOut() {
+		$(".preloader").addClass("_fadeup");
+		setTimeout(function () {
+			$(".preloader").fadeOut();
+
+			setTimeout(function () {
+				$("body").removeClass("_preloader-open");
+			}, 500);
+		}, 1000);
+	}
+	function preloaderIn() {
+		$(".preloader").scrollLeft((1300 - window.innerWidth) / 2);
+		$(window).scrollTop(8);
+		$(".preloader").removeClass(
+			" _load _circles-animate _content _city _fadeup"
+		);
+		$(".preloader").fadeIn(function () {
+			$(".preloader").addClass("_load");
+		});
+		$("body").addClass("_preloader-open");
+		setTimeout(function () {
+			$(".preloader").addClass("_circles-animate");
+			let delay = 0;
+
+			setTimeout(function () {
+				$(".preloader").addClass("_content");
+			}, 1500);
+
+			setTimeout(function () {
+				$(".preloader").addClass("_city");
+			}, 3000);
+
+			setTimeout(function () {
+				$(".header").addClass("_opacity");
+			}, 3500);
+
+			setTimeout(function () {
+				$(".preloader__circle").attr("style", "");
+			}, 4000);
+		}, 500);
+		var $svg = $(".preloader__logo svg").drawsvg({
+			duration: 3000,
+		});
+		$svg.drawsvg("animate");
+	}
+
+	if ($(".preloader__desc").length) {
+		let indx = 0;
+		function titleSliderResize() {
+			let w = 0;
+			$(".preloader__desc-slider  span").each(function () {
+				w = w < $(this).width() ? $(this).width() : w;
+				console.log($(this).width(), w);
+			});
+			$(".preloader__desc-slider ").css("min-width", w);
+			$(".preloader__desc-slider ").css(
+				"min-width",
+				$(".preloader__desc-slider  span").first().width()
+			);
+		}
+		titleSliderResize();
+		window.addEventListener(
+			"resize",
+			function (event) {
+				titleSliderResize();
+			},
+			true
+		);
+		setInterval(function () {
+			let lng = $(".preloader__desc-slider   span").length - 1;
+			$(".preloader__desc-slider   span").removeClass("_prev");
+			$(".preloader__desc-slider  span._active").addClass("_prev");
+			$(".preloader__desc-slider   span").removeClass("_active");
+			indx = indx == lng ? 0 : indx + 1;
+
+			$(".preloader__desc-slider   span").eq(indx).addClass("_active");
+		}, 2000);
+	}
+	$(".preloader").addClass("_load");
+	var $svg = $(".preloader__logo svg").drawsvg({
+		duration: 3000,
+	});
+	$svg.drawsvg("animate");
+
+	$(".header__city").click(function () {
+		$(".preloader").scrollLeft((1300 - window.innerWidth) / 2);
+
+		$(".preloader").removeClass(
+			" _load _circles-animate _content _city _fadeup"
+		);
+		$(".preloader").fadeIn(function () {
+			$(".preloader").addClass("_load");
+		});
+		$("body").addClass("_preloader-open");
+		setTimeout(function () {
+			$(".preloader").addClass("_circles-animate");
+			let delay = 0;
+
+			setTimeout(function () {
+				$(".preloader").addClass("_content");
+			}, 1500);
+
+			setTimeout(function () {
+				$(".preloader").addClass("_city");
+			}, 3000);
+
+			setTimeout(function () {
+				$(".header").addClass("_opacity");
+			}, 3500);
+
+			setTimeout(function () {
+				$(".preloader__circle").attr("style", "");
+			}, 4000);
+		}, 500);
+	});
+	setTimeout(function () {
+		$(".preloader").addClass("_circles-animate");
+		let delay = 0;
+
+		$(".preloader").scrollLeft((1300 - window.innerWidth) / 2);
+		$(".preloader__circle").each(function () {
+			gsap.to(this, {
+				rotation: 0,
+				delay: delay,
+				duration: 10,
+				ease: "elastic",
+			});
+			delay += 0.2;
+		});
+		if (isCityChange) {
+			setTimeout(function () {
+				$(".preloader").addClass("_content");
+			}, 1500);
+
+			setTimeout(function () {
+				$(".preloader").addClass("_city");
+			}, 3000);
+
+			setTimeout(function () {
+				$(".header").addClass("_opacity");
+			}, 3500);
+			if ($("#city-change-page").length == 0) {
+				$(".preloader").on("mousewheel", function (e) {
+					if (e.originalEvent.wheelDelta / 120 > 0) {
+						preloaderIn();
+					} else {
+						preloaderOut();
+					}
+				});
+				$(".preloader").on("DOMMouseScroll", function (e) {
+					if (e.originalEvent.wheelDelta / 120 > 0) {
+						console.log("up");
+					} else {
+						preloaderOut();
+					}
+				});
+
+				$(".preloader").swipe({
+					preventDefaultEvents: false,
+					//Generic swipe handler for all directions
+					swipe: function (
+						event,
+						direction,
+						distance,
+						duration,
+						fingerCount,
+						fingerData
+					) {
+						if (distance >= 50) {
+							if (direction == "up") {
+								preloaderOut();
+							}
+						}
+					},
+				});
+			}
+		} else {
+			setTimeout(function () {
+				preloaderOut();
+			}, 1000);
+		}
+		$(".preloader__down").click(function () {
+			preloaderOut();
+		});
+		setTimeout(function () {
+			$(".preloader__circle").css({
+				opacity: 1,
+				animation: "none",
+			});
+			$(document).mousemove(function (event) {
+				let p = 1 / (window.innerWidth / event.pageX) - 0.5;
+				let i = 0;
+
+				$(".preloader__circle").each(function () {
+					gsap.to(this, {
+						rotation: (4 + i) * p,
+						duration: 4,
+						ease: "elastic",
+					});
+					i += 1;
+				});
+				$(".preloader__cities").each(function () {
+					let i = $(this).data("id") - 1;
+					gsap.to(this, {
+						rotation: (4 + i) * p,
+						duration: 4,
+						ease: "elastic",
+					});
+					$(this)
+						.find("span")
+						.each(function () {
+							gsap.to(this, {
+								rotation: -1 * (4 + i) * p,
+								duration: 4,
+								ease: "elastic",
+							});
+						});
+				});
+			});
+		}, 4000);
+	}, 500);
+});
+
+$(function () {
+	$(".popup-slider__swiper").each(function () {
+		const swiper = new Swiper(this, {
+			speed: 400,
+			setWrapperSize: true,
+			observeParents: true,
+			observer: true,
+			spaceBetween: 50,
+		});
+	});
+	$(".popup-slider__overlay, .popup-slider__close").click(function () {
+		$(".popup-slider").fadeOut();
+		$("body").removeClass("_no-scroll");
+	});
+	$("[data-popupslider]").click(function () {
+		let id = $(this).data("popupslider").split("|")[0];
+		let slide = $(this).data("popupslider").split("|")[1];
+		if ($(id).length) {
+			$("body").addClass("_no-scroll");
+			$(id).fadeIn();
+
+			$(id).find(".popup-slider__swiper")[0].swiper.slideTo(slide);
+		}
+	});
+	$("[data-popup]").click(function () {
+		let id = $(this).data("popup");
+		if ($(id).length) {
+			$("body").addClass("_no-scroll");
+			$(id).fadeIn();
+		}
+	});
+
+	$(".popup__overlay, .popup__close").click(function () {
+		$(".popup").fadeOut();
+		$("body").removeClass("_no-scroll");
+	});
+	$(".filters-popup__overlay, .filters-popup__close").click(function () {
+		$(".filters-popup").fadeOut();
+		$("body").removeClass("_no-scroll");
+	});
+});
+
+$(function () {
+	$(".words").each(function () {
+		let th = $(this);
+		var words = th.text().split(" ");
+		th.empty();
+		$.each(words, function (i, v) {
+			th.append($("<span>").text(v));
+			th.append(" ");
+		});
+	});
 });
